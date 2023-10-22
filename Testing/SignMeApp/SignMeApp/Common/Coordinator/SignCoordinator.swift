@@ -36,15 +36,19 @@ extension SignCoordinator: Coordinator {
 // MARK: Factories
 private extension SignCoordinator {
     func makeSignIn() -> UIViewController {
+        // dependency injection used here
+        let store = container.signInStore
         // creating view
-        let view = SignInView(store: SignInStore(validationManager: ValidationManager()), coordinator: self)
+        let view = SignInView(store: store, coordinator: self)
         // wrapping SwiftUI view for UIKit navigation
         return UIHostingController(rootView: view)
     }
     
     func makeSignOut() -> UIViewController {
+        // dependency injection used here
+        let signOutStore = container.signOutStore
         // creating view
-        let view = SignOutView(store: SignOutStore(validationManager: ValidationManager(), apiManager: APIManager()))
+        let view = SignOutView(store: signOutStore)
         // wrapping SwiftUI view for UIKit navigation
         return UIHostingController(rootView: view)
     }

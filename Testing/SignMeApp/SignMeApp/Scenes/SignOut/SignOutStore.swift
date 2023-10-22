@@ -40,4 +40,3 @@ final class SignOutStore: ObservableObject {
     }
 
 }
-
