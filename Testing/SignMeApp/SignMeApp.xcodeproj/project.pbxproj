@@ -1,0 +1,793 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC13E5FC28D9B29B00783F18 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC13E5FB28D9B29B00783F18 /* ValidationManager.swift */; };
+		EC13E5FF28D9B2A900783F18 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC13E5FE28D9B2A900783F18 /* User.swift */; };
+		EC40A8B828E3151C0008DF11 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC40A8B728E3151C0008DF11 /* ValidationError.swift */; };
+		EC578F8628D9D891007DCB56 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC578F8528D9D891007DCB56 /* SignInView.swift */; };
+		EC578F8828D9DB76007DCB56 /* SignInStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC578F8728D9DB76007DCB56 /* SignInStore.swift */; };
+		EC578F8A28D9E27D007DCB56 /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC578F8928D9E27D007DCB56 /* SignOutView.swift */; };
+		EC578F8C28D9E35C007DCB56 /* SignOutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC578F8B28D9E35C007DCB56 /* SignOutStore.swift */; };
+		EC578F8E28D9F512007DCB56 /* SignInEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC578F8D28D9F512007DCB56 /* SignInEventHandling.swift */; };
+		ECFB154F28D86C33004A027C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB154E28D86C33004A027C /* AppDelegate.swift */; };
+		ECFB155128D86C33004A027C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB155028D86C33004A027C /* SceneDelegate.swift */; };
+		ECFB155828D86C34004A027C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECFB155728D86C34004A027C /* Assets.xcassets */; };
+		ECFB155B28D86C34004A027C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECFB155928D86C34004A027C /* LaunchScreen.storyboard */; };
+		ECFB156628D86C34004A027C /* SignMeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB156528D86C34004A027C /* SignMeAppTests.swift */; };
+		ECFB157028D86C34004A027C /* SignMeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB156F28D86C34004A027C /* SignMeAppUITests.swift */; };
+		ECFB158328D87151004A027C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB158228D87151004A027C /* AppCoordinator.swift */; };
+		ECFB158B28D871B9004A027C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB158A28D871B9004A027C /* Configuration.swift */; };
+		ECFB158D28D871D3004A027C /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB158C28D871D3004A027C /* DIContainer.swift */; };
+		ECFB159028D87212004A027C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB158F28D87212004A027C /* Coordinator.swift */; };
+		ECFB159228D8722F004A027C /* SignCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB159128D8722F004A027C /* SignCoordinator.swift */; };
+		ECFB159A28D87651004A027C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB159928D87651004A027C /* APIManager.swift */; };
+		ECFB159D28D87686004A027C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB159C28D87686004A027C /* Endpoint.swift */; };
+		ECFB15A228D876B4004A027C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB159E28D876B3004A027C /* Logger.swift */; };
+		ECFB15A328D876B4004A027C /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB159F28D876B3004A027C /* HTTPHeader.swift */; };
+		ECFB15A428D876B4004A027C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB15A028D876B3004A027C /* HTTPMethod.swift */; };
+		ECFB15A528D876B4004A027C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB15A128D876B3004A027C /* APIError.swift */; };
+		ECFB15A728D876CA004A027C /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB15A628D876CA004A027C /* UserRouter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ECFB156228D86C34004A027C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECFB154328D86C33004A027C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFB154A28D86C33004A027C;
+			remoteInfo = SignMeApp;
+		};
+		ECFB156C28D86C34004A027C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECFB154328D86C33004A027C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFB154A28D86C33004A027C;
+			remoteInfo = SignMeApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC13E5FB28D9B29B00783F18 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
+		EC13E5FE28D9B2A900783F18 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EC40A8B728E3151C0008DF11 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		EC578F8528D9D891007DCB56 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		EC578F8728D9DB76007DCB56 /* SignInStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInStore.swift; sourceTree = "<group>"; };
+		EC578F8928D9E27D007DCB56 /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
+		EC578F8B28D9E35C007DCB56 /* SignOutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutStore.swift; sourceTree = "<group>"; };
+		EC578F8D28D9F512007DCB56 /* SignInEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEventHandling.swift; sourceTree = "<group>"; };
+		ECFB154B28D86C33004A027C /* SignMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECFB154E28D86C33004A027C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ECFB155028D86C33004A027C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ECFB155728D86C34004A027C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ECFB155A28D86C34004A027C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ECFB155C28D86C34004A027C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECFB156128D86C34004A027C /* SignMeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignMeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECFB156528D86C34004A027C /* SignMeAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignMeAppTests.swift; sourceTree = "<group>"; };
+		ECFB156B28D86C34004A027C /* SignMeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignMeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECFB156F28D86C34004A027C /* SignMeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignMeAppUITests.swift; sourceTree = "<group>"; };
+		ECFB158228D87151004A027C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		ECFB158A28D871B9004A027C /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		ECFB158C28D871D3004A027C /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		ECFB158F28D87212004A027C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		ECFB159128D8722F004A027C /* SignCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignCoordinator.swift; sourceTree = "<group>"; };
+		ECFB159928D87651004A027C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		ECFB159C28D87686004A027C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		ECFB159E28D876B3004A027C /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		ECFB159F28D876B3004A027C /* HTTPHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
+		ECFB15A028D876B3004A027C /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		ECFB15A128D876B3004A027C /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		ECFB15A628D876CA004A027C /* UserRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECFB154828D86C33004A027C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFB155E28D86C34004A027C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFB156828D86C34004A027C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC13E5FA28D9B28E00783F18 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				EC13E5FB28D9B29B00783F18 /* ValidationManager.swift */,
+				EC40A8B728E3151C0008DF11 /* ValidationError.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		EC13E5FD28D9B2A300783F18 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC13E5FE28D9B2A900783F18 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EC13E60128D9B2C300783F18 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EC13E60528D9B2D200783F18 /* SignOut */,
+				EC13E60228D9B2C800783F18 /* SignIn */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EC13E60228D9B2C800783F18 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				EC578F8528D9D891007DCB56 /* SignInView.swift */,
+				EC578F8728D9DB76007DCB56 /* SignInStore.swift */,
+				EC578F8D28D9F512007DCB56 /* SignInEventHandling.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		EC13E60528D9B2D200783F18 /* SignOut */ = {
+			isa = PBXGroup;
+			children = (
+				EC578F8928D9E27D007DCB56 /* SignOutView.swift */,
+				EC578F8B28D9E35C007DCB56 /* SignOutStore.swift */,
+			);
+			path = SignOut;
+			sourceTree = "<group>";
+		};
+		ECFB154228D86C33004A027C = {
+			isa = PBXGroup;
+			children = (
+				ECFB154D28D86C33004A027C /* SignMeApp */,
+				ECFB156428D86C34004A027C /* SignMeAppTests */,
+				ECFB156E28D86C34004A027C /* SignMeAppUITests */,
+				ECFB154C28D86C33004A027C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ECFB154C28D86C33004A027C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB154B28D86C33004A027C /* SignMeApp.app */,
+				ECFB156128D86C34004A027C /* SignMeAppTests.xctest */,
+				ECFB156B28D86C34004A027C /* SignMeAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECFB154D28D86C33004A027C /* SignMeApp */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB157E28D86EF4004A027C /* Application */,
+				ECFB157F28D86EFF004A027C /* Common */,
+				EC13E60128D9B2C300783F18 /* Scenes */,
+			);
+			path = SignMeApp;
+			sourceTree = "<group>";
+		};
+		ECFB156428D86C34004A027C /* SignMeAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB156528D86C34004A027C /* SignMeAppTests.swift */,
+			);
+			path = SignMeAppTests;
+			sourceTree = "<group>";
+		};
+		ECFB156E28D86C34004A027C /* SignMeAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB156F28D86C34004A027C /* SignMeAppUITests.swift */,
+			);
+			path = SignMeAppUITests;
+			sourceTree = "<group>";
+		};
+		ECFB157E28D86EF4004A027C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB154E28D86C33004A027C /* AppDelegate.swift */,
+				ECFB155028D86C33004A027C /* SceneDelegate.swift */,
+				ECFB155728D86C34004A027C /* Assets.xcassets */,
+				ECFB155C28D86C34004A027C /* Info.plist */,
+				ECFB155928D86C34004A027C /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		ECFB157F28D86EFF004A027C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB158628D87184004A027C /* Configuration */,
+				ECFB158128D870DD004A027C /* Coordinator */,
+				ECFB158528D8717A004A027C /* DependencyInjection */,
+				ECFB158728D8718C004A027C /* Managers */,
+				EC13E5FD28D9B2A300783F18 /* Models */,
+				ECFB158428D87170004A027C /* Protocols */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		ECFB158128D870DD004A027C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB158228D87151004A027C /* AppCoordinator.swift */,
+				ECFB159128D8722F004A027C /* SignCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		ECFB158428D87170004A027C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB158E28D87205004A027C /* Coordination */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		ECFB158528D8717A004A027C /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB158C28D871D3004A027C /* DIContainer.swift */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		ECFB158628D87184004A027C /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB158A28D871B9004A027C /* Configuration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		ECFB158728D8718C004A027C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EC13E5FA28D9B28E00783F18 /* Validation */,
+				ECFB159528D87628004A027C /* API */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		ECFB158E28D87205004A027C /* Coordination */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB158F28D87212004A027C /* Coordinator.swift */,
+			);
+			path = Coordination;
+			sourceTree = "<group>";
+		};
+		ECFB159528D87628004A027C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB159828D87642004A027C /* Routers */,
+				ECFB159728D8763A004A027C /* Utils */,
+				ECFB159928D87651004A027C /* APIManager.swift */,
+				ECFB159C28D87686004A027C /* Endpoint.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		ECFB159728D8763A004A027C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB15A128D876B3004A027C /* APIError.swift */,
+				ECFB159F28D876B3004A027C /* HTTPHeader.swift */,
+				ECFB15A028D876B3004A027C /* HTTPMethod.swift */,
+				ECFB159E28D876B3004A027C /* Logger.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		ECFB159828D87642004A027C /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB15A628D876CA004A027C /* UserRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ECFB154A28D86C33004A027C /* SignMeApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECFB157528D86C34004A027C /* Build configuration list for PBXNativeTarget "SignMeApp" */;
+			buildPhases = (
+				ECFB154728D86C33004A027C /* Sources */,
+				ECFB154828D86C33004A027C /* Frameworks */,
+				ECFB154928D86C33004A027C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SignMeApp;
+			productName = SignMeApp;
+			productReference = ECFB154B28D86C33004A027C /* SignMeApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ECFB156028D86C34004A027C /* SignMeAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECFB157828D86C34004A027C /* Build configuration list for PBXNativeTarget "SignMeAppTests" */;
+			buildPhases = (
+				ECFB155D28D86C34004A027C /* Sources */,
+				ECFB155E28D86C34004A027C /* Frameworks */,
+				ECFB155F28D86C34004A027C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECFB156328D86C34004A027C /* PBXTargetDependency */,
+			);
+			name = SignMeAppTests;
+			productName = SignMeAppTests;
+			productReference = ECFB156128D86C34004A027C /* SignMeAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ECFB156A28D86C34004A027C /* SignMeAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECFB157B28D86C34004A027C /* Build configuration list for PBXNativeTarget "SignMeAppUITests" */;
+			buildPhases = (
+				ECFB156728D86C34004A027C /* Sources */,
+				ECFB156828D86C34004A027C /* Frameworks */,
+				ECFB156928D86C34004A027C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECFB156D28D86C34004A027C /* PBXTargetDependency */,
+			);
+			name = SignMeAppUITests;
+			productName = SignMeAppUITests;
+			productReference = ECFB156B28D86C34004A027C /* SignMeAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECFB154328D86C33004A027C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					ECFB154A28D86C33004A027C = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					ECFB156028D86C34004A027C = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = ECFB154A28D86C33004A027C;
+					};
+					ECFB156A28D86C34004A027C = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = ECFB154A28D86C33004A027C;
+					};
+				};
+			};
+			buildConfigurationList = ECFB154628D86C33004A027C /* Build configuration list for PBXProject "SignMeApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ECFB154228D86C33004A027C;
+			productRefGroup = ECFB154C28D86C33004A027C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECFB154A28D86C33004A027C /* SignMeApp */,
+				ECFB156028D86C34004A027C /* SignMeAppTests */,
+				ECFB156A28D86C34004A027C /* SignMeAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ECFB154928D86C33004A027C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECFB155B28D86C34004A027C /* LaunchScreen.storyboard in Resources */,
+				ECFB155828D86C34004A027C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFB155F28D86C34004A027C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFB156928D86C34004A027C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECFB154728D86C33004A027C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC13E5FC28D9B29B00783F18 /* ValidationManager.swift in Sources */,
+				ECFB15A328D876B4004A027C /* HTTPHeader.swift in Sources */,
+				ECFB158328D87151004A027C /* AppCoordinator.swift in Sources */,
+				ECFB15A228D876B4004A027C /* Logger.swift in Sources */,
+				EC13E5FF28D9B2A900783F18 /* User.swift in Sources */,
+				EC578F8828D9DB76007DCB56 /* SignInStore.swift in Sources */,
+				EC578F8A28D9E27D007DCB56 /* SignOutView.swift in Sources */,
+				EC40A8B828E3151C0008DF11 /* ValidationError.swift in Sources */,
+				ECFB158B28D871B9004A027C /* Configuration.swift in Sources */,
+				EC578F8628D9D891007DCB56 /* SignInView.swift in Sources */,
+				ECFB15A728D876CA004A027C /* UserRouter.swift in Sources */,
+				ECFB159A28D87651004A027C /* APIManager.swift in Sources */,
+				EC578F8C28D9E35C007DCB56 /* SignOutStore.swift in Sources */,
+				ECFB159D28D87686004A027C /* Endpoint.swift in Sources */,
+				ECFB154F28D86C33004A027C /* AppDelegate.swift in Sources */,
+				ECFB158D28D871D3004A027C /* DIContainer.swift in Sources */,
+				ECFB159228D8722F004A027C /* SignCoordinator.swift in Sources */,
+				ECFB15A428D876B4004A027C /* HTTPMethod.swift in Sources */,
+				ECFB155128D86C33004A027C /* SceneDelegate.swift in Sources */,
+				ECFB159028D87212004A027C /* Coordinator.swift in Sources */,
+				EC578F8E28D9F512007DCB56 /* SignInEventHandling.swift in Sources */,
+				ECFB15A528D876B4004A027C /* APIError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFB155D28D86C34004A027C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECFB156628D86C34004A027C /* SignMeAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFB156728D86C34004A027C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECFB157028D86C34004A027C /* SignMeAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ECFB156328D86C34004A027C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFB154A28D86C33004A027C /* SignMeApp */;
+			targetProxy = ECFB156228D86C34004A027C /* PBXContainerItemProxy */;
+		};
+		ECFB156D28D86C34004A027C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFB154A28D86C33004A027C /* SignMeApp */;
+			targetProxy = ECFB156C28D86C34004A027C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ECFB155928D86C34004A027C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECFB155A28D86C34004A027C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ECFB157328D86C34004A027C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ECFB157428D86C34004A027C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ECFB157628D86C34004A027C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2BZY3UW38Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SignMeApp/Application/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strv.vi2.SignMeApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ECFB157728D86C34004A027C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2BZY3UW38Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SignMeApp/Application/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strv.vi2.SignMeApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ECFB157928D86C34004A027C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2BZY3UW38Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strv.vi2.SignMeAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SignMeApp.app/SignMeApp";
+			};
+			name = Debug;
+		};
+		ECFB157A28D86C34004A027C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2BZY3UW38Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strv.vi2.SignMeAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SignMeApp.app/SignMeApp";
+			};
+			name = Release;
+		};
+		ECFB157C28D86C34004A027C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2BZY3UW38Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strv.vi2.SignMeAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SignMeApp;
+			};
+			name = Debug;
+		};
+		ECFB157D28D86C34004A027C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2BZY3UW38Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strv.vi2.SignMeAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SignMeApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECFB154628D86C33004A027C /* Build configuration list for PBXProject "SignMeApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECFB157328D86C34004A027C /* Debug */,
+				ECFB157428D86C34004A027C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECFB157528D86C34004A027C /* Build configuration list for PBXNativeTarget "SignMeApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECFB157628D86C34004A027C /* Debug */,
+				ECFB157728D86C34004A027C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECFB157828D86C34004A027C /* Build configuration list for PBXNativeTarget "SignMeAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECFB157928D86C34004A027C /* Debug */,
+				ECFB157A28D86C34004A027C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECFB157B28D86C34004A027C /* Build configuration list for PBXNativeTarget "SignMeAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECFB157C28D86C34004A027C /* Debug */,
+				ECFB157D28D86C34004A027C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ECFB154328D86C33004A027C /* Project object */;
+}
