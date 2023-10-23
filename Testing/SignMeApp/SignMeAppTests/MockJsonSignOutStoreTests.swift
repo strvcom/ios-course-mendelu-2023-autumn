@@ -8,19 +8,23 @@
 import Foundation
 @testable import SignMeApp
 import XCTest
+import Combine
 
 final class MockJsonSignOutStoreTests: XCTestCase {
     var container: DIContainer!
     var signOutStore: SignOutStore!
-    
+    private var cancellables: Set<AnyCancellable>!
+
     override func setUpWithError() throws {
         container = DIContainer(apiManager: MockJsonAPIManager())
         signOutStore = container.signOutStore
+        cancellables = []
     }
 
     override func tearDownWithError() throws {
         container = nil
         signOutStore = nil
+        cancellables = nil
     }
     
     func testInit() {
@@ -28,13 +32,32 @@ final class MockJsonSignOutStoreTests: XCTestCase {
         XCTAssertNil(signOutStore.user)
     }
     
-    func testUser() async {
+    func testUser() {
+        // set expectation
+        let expectation = expectation(description: "UserPublisher")
         // fetch mocked data
-        await signOutStore.fetch()
+        var result: User?
+        signOutStore.userPublisher().sink { completion in
+            switch completion {
+            case .finished:
+                break
+            case let .failure(error):
+                XCTFail(error.localizedDescription)
+            }
+
+            // Fullfilling our expectation to unblock
+            // our test execution:
+            expectation.fulfill()
+        } receiveValue: { user in
+            result = user
+        }
+        .store(in: &cancellables)
+
+        waitForExpectations(timeout: 10)
         // compare mocked data received from MockJsonAPIManager with User.mock
         // should be the same
         // we test here decoding Data to User
         // we test here also logic of SignOutStore
-        XCTAssertEqual(signOutStore.user, User.mock)
+        XCTAssertEqual(result, User.mock)
     }
 }

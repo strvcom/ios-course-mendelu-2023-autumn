@@ -22,13 +22,6 @@ struct SignOutView: View {
             .padding()
             .clipShape(Capsule())
         }
-        .onAppear(perform: load)
-    }
-
-    func load() {
-        Task {
-            await store.fetch()
-        }
     }
 }
 

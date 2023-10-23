@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Combine
 
 protocol APIManaging {
-    func request<T: Decodable>(_ endpoint: Endpoint) async throws -> T
+    func request<T: Decodable>(_ endpoint: Endpoint) -> AnyPublisher<T, Error>
 }
 
 final class APIManager {
@@ -23,41 +24,41 @@ final class APIManager {
     private lazy var decoder: JSONDecoder = {
         JSONDecoder()
     }()
-
-    private func request(_ endpoint: Endpoint) async throws -> Data {
-        let request: URLRequest = try endpoint.asRequest()
-
-        Logger.log("🚀 Request for \"\(request.description)\"")
-
-        let (data, response) = try await urlSession.data(for: request)
-
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw APIError.noResponse
-        }
-
-        guard 200..<300 ~= httpResponse.statusCode else {
-            throw APIError.unacceptableResponseStatusCode
-        }
-
-        // Uncomment this for pretty response logging!
-        if let body = String(data: data, encoding: .utf8) {
-            Logger.log("""
-            ☀️ Response for \"\(request.description)\":
-            👀 Status: \(httpResponse.statusCode)
-            🧍‍♂️ Body:
-            \(body)
-            """)
-        }
-
-        return data
-    }
 }
 
 extension APIManager: APIManaging {
-    func request<T: Decodable>(_ endpoint: Endpoint) async throws -> T {
-        let data = try await request(endpoint)
-        let object = try decoder.decode(T.self, from: data)
+    func request<T: Decodable>(_ endpoint: Endpoint) -> AnyPublisher<T, Error> {
+        let request: URLRequest
+        do {
+            request = try endpoint.asRequest()
+        } catch {
+            return Fail(error: URLError(.badURL))
+                .eraseToAnyPublisher()
+        }
 
-        return object
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .tryMap({ data, response in
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    throw APIError.noResponse
+                }
+
+                guard 200..<300 ~= httpResponse.statusCode else {
+                    throw APIError.unacceptableResponseStatusCode
+                }
+
+                // Uncomment this for pretty response logging!
+                if let body = String(data: data, encoding: .utf8) {
+                    Logger.log("""
+                    ☀️ Response for \"\(request.description)\":
+                    👀 Status: \(httpResponse.statusCode)
+                    🧍‍♂️ Body:
+                    \(body)
+                    """)
+                }
+
+                return data
+            })
+            .decode(type: T.self, decoder: decoder)
+            .eraseToAnyPublisher()
     }
 }
