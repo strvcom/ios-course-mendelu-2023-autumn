@@ -13,7 +13,7 @@ class SignInStoreTests: XCTestCase {
     var signInStore: SignInStore!
 
     override func setUpWithError() throws {
-        container = DIContainer()
+        container = DIContainer(apiManager: MockJsonAPIManager())
         signInStore = container.signInStore
     }
 

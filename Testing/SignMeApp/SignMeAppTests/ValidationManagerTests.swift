@@ -14,7 +14,7 @@ final class ValidationManagerTests: XCTestCase {
     var validationManager: ValidationManaging!
     
     override func setUpWithError() throws {
-        container = DIContainer()
+        container = DIContainer(apiManager: MockJsonAPIManager())
         validationManager = container.validationManager
     }
     
@@ -63,7 +63,5 @@ final class ValidationManagerTests: XCTestCase {
                 XCTFail()
             }
         }
-        
-        
     }
 }
