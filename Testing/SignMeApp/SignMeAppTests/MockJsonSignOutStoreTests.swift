@@ -14,8 +14,8 @@ final class MockJsonSignOutStoreTests: XCTestCase {
     var signOutStore: SignOutStore!
     
     override func setUpWithError() throws {
-        container = DIContainer()
-        signOutStore = container.mockJsonSignOutStore
+        container = DIContainer(apiManager: MockJsonAPIManager())
+        signOutStore = container.signOutStore
     }
 
     override func tearDownWithError() throws {
@@ -38,4 +38,3 @@ final class MockJsonSignOutStoreTests: XCTestCase {
         XCTAssertEqual(signOutStore.user, User.mock)
     }
 }
-

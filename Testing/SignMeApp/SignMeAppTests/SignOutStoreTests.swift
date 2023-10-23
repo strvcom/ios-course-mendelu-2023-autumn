@@ -14,7 +14,7 @@ final class SignOutStoreTests: XCTestCase {
     var signOutStore: SignOutStore!
     
     override func setUpWithError() throws {
-        container = DIContainer()
+        container = DIContainer(apiManager: MockJsonAPIManager())
         signOutStore = container.signOutStore
     }
 
@@ -32,4 +32,3 @@ final class SignOutStoreTests: XCTestCase {
         XCTAssertNotNil(signOutStore.user)
     }
 }
-
