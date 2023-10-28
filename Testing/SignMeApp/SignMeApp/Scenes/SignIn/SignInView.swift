@@ -22,13 +22,11 @@ struct SignInView: View {
             TextField("Email", text: $store.emailText)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.horizontal)
-                .accessibilityIdentifier("signInTextField")
-            
+
             SecureField("Password", text: $store.passwordText)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.horizontal)
-                .accessibilityIdentifier("signInSecureField")
-            
+
             Spacer()
             Button("Sign In") {
                 coordinator?.handle(event: .goToSignOut)
@@ -38,7 +36,6 @@ struct SignInView: View {
             .background(store.buttonDisabled ? Color.gray : Color.blue)
             .foregroundColor(.white)
             .clipShape(Capsule())
-            .accessibilityIdentifier("signInButton")
             Spacer()
         }
     }

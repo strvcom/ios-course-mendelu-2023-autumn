@@ -20,6 +20,7 @@
 		ECB6ADBB28EAC8A500A173F9 /* MockJsonAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB6ADBA28EAC8A500A173F9 /* MockJsonAPIManager.swift */; };
 		ECB6ADBD28EAC97E00A173F9 /* SignOutStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB6ADBC28EAC97E00A173F9 /* SignOutStoreTests.swift */; };
 		ECB6ADBF28EAC9CD00A173F9 /* MockJsonSignOutStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB6ADBE28EAC9CD00A173F9 /* MockJsonSignOutStoreTests.swift */; };
+		ECC666D52AECE8F70041ABF0 /* SignOutEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC666D42AECE8F70041ABF0 /* SignOutEventHandling.swift */; };
 		ECFB154F28D86C33004A027C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB154E28D86C33004A027C /* AppDelegate.swift */; };
 		ECFB155128D86C33004A027C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB155028D86C33004A027C /* SceneDelegate.swift */; };
 		ECFB155828D86C34004A027C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECFB155728D86C34004A027C /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		ECB6ADBA28EAC8A500A173F9 /* MockJsonAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJsonAPIManager.swift; sourceTree = "<group>"; };
 		ECB6ADBC28EAC97E00A173F9 /* SignOutStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutStoreTests.swift; sourceTree = "<group>"; };
 		ECB6ADBE28EAC9CD00A173F9 /* MockJsonSignOutStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJsonSignOutStoreTests.swift; sourceTree = "<group>"; };
+		ECC666D42AECE8F70041ABF0 /* SignOutEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutEventHandling.swift; sourceTree = "<group>"; };
 		ECFB154B28D86C33004A027C /* SignMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFB154E28D86C33004A027C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECFB155028D86C33004A027C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			children = (
 				EC578F8928D9E27D007DCB56 /* SignOutView.swift */,
 				EC578F8B28D9E35C007DCB56 /* SignOutStore.swift */,
+				ECC666D42AECE8F70041ABF0 /* SignOutEventHandling.swift */,
 			);
 			path = SignOut;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				ECFB15A428D876B4004A027C /* HTTPMethod.swift in Sources */,
 				ECFB155128D86C33004A027C /* SceneDelegate.swift in Sources */,
 				ECFB159028D87212004A027C /* Coordinator.swift in Sources */,
+				ECC666D52AECE8F70041ABF0 /* SignOutEventHandling.swift in Sources */,
 				EC578F8E28D9F512007DCB56 /* SignInEventHandling.swift in Sources */,
 				ECFB15A528D876B4004A027C /* APIError.swift in Sources */,
 			);

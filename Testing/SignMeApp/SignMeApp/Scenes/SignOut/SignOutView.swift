@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct SignOutView: View {
+    // navigation
+    enum Event {
+        case signOut
+    }
     @StateObject var store: SignOutStore
+    weak var coordinator: SignOutEventHandling?
 
     var body: some View {
         VStack {
@@ -17,7 +22,7 @@ struct SignOutView: View {
             Text("ID: \(store.user?.id ?? 0)")
             Text("title: \(store.user?.title ?? "Nothing")")
             Button("Sign Out") {
-                print("I just tapped on button")
+                coordinator?.handle(event: .signOut)
             }
             .padding()
             .clipShape(Capsule())
