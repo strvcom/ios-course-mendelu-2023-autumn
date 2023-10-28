@@ -2,7 +2,7 @@
 //  ValidationManager.swift
 //  SignMeApp
 //
-//  Created by Martin Vidovic on 20.09.2022.
+//  Created by Martin Vidovic on 20.09.2023.
 //
 
 import Foundation
@@ -14,6 +14,10 @@ protocol ValidationManaging {
 
 final class ValidationManager: ValidationManaging {
     func randomNumberInRange(from: Int, to: Int) throws -> Int {
+        // prevent creating range from 20 to 1 -> decreasing numbers causes error
+        guard from < to else {
+            throw ValidationError.wrongRange
+        }
         return Int.random(in: from..<to)
     }
     

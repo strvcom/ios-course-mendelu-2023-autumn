@@ -10,17 +10,23 @@
 		EC13E5FC28D9B29B00783F18 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC13E5FB28D9B29B00783F18 /* ValidationManager.swift */; };
 		EC13E5FF28D9B2A900783F18 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC13E5FE28D9B2A900783F18 /* User.swift */; };
 		EC40A8B828E3151C0008DF11 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC40A8B728E3151C0008DF11 /* ValidationError.swift */; };
+		EC40A8BA28E320B70008DF11 /* SignInStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC40A8B928E320B70008DF11 /* SignInStoreTests.swift */; };
 		EC578F8628D9D891007DCB56 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC578F8528D9D891007DCB56 /* SignInView.swift */; };
 		EC578F8828D9DB76007DCB56 /* SignInStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC578F8728D9DB76007DCB56 /* SignInStore.swift */; };
 		EC578F8A28D9E27D007DCB56 /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC578F8928D9E27D007DCB56 /* SignOutView.swift */; };
 		EC578F8C28D9E35C007DCB56 /* SignOutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC578F8B28D9E35C007DCB56 /* SignOutStore.swift */; };
 		EC578F8E28D9F512007DCB56 /* SignInEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC578F8D28D9F512007DCB56 /* SignInEventHandling.swift */; };
+		EC578F9028D9FDB9007DCB56 /* ValidationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC578F8F28D9FDB9007DCB56 /* ValidationManagerTests.swift */; };
+		ECB6ADBB28EAC8A500A173F9 /* MockJsonAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB6ADBA28EAC8A500A173F9 /* MockJsonAPIManager.swift */; };
+		ECB6ADBD28EAC97E00A173F9 /* SignOutStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB6ADBC28EAC97E00A173F9 /* SignOutStoreTests.swift */; };
+		ECB6ADBF28EAC9CD00A173F9 /* MockJsonSignOutStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB6ADBE28EAC9CD00A173F9 /* MockJsonSignOutStoreTests.swift */; };
 		ECFB154F28D86C33004A027C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB154E28D86C33004A027C /* AppDelegate.swift */; };
 		ECFB155128D86C33004A027C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB155028D86C33004A027C /* SceneDelegate.swift */; };
 		ECFB155828D86C34004A027C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECFB155728D86C34004A027C /* Assets.xcassets */; };
 		ECFB155B28D86C34004A027C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECFB155928D86C34004A027C /* LaunchScreen.storyboard */; };
 		ECFB156628D86C34004A027C /* SignMeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB156528D86C34004A027C /* SignMeAppTests.swift */; };
 		ECFB157028D86C34004A027C /* SignMeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB156F28D86C34004A027C /* SignMeAppUITests.swift */; };
+		ECFB157228D86C34004A027C /* SignMeAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB157128D86C34004A027C /* SignMeAppUITestsLaunchTests.swift */; };
 		ECFB158328D87151004A027C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB158228D87151004A027C /* AppCoordinator.swift */; };
 		ECFB158B28D871B9004A027C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB158A28D871B9004A027C /* Configuration.swift */; };
 		ECFB158D28D871D3004A027C /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB158C28D871D3004A027C /* DIContainer.swift */; };
@@ -56,11 +62,16 @@
 		EC13E5FB28D9B29B00783F18 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 		EC13E5FE28D9B2A900783F18 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EC40A8B728E3151C0008DF11 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		EC40A8B928E320B70008DF11 /* SignInStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInStoreTests.swift; sourceTree = "<group>"; };
 		EC578F8528D9D891007DCB56 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		EC578F8728D9DB76007DCB56 /* SignInStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInStore.swift; sourceTree = "<group>"; };
 		EC578F8928D9E27D007DCB56 /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
 		EC578F8B28D9E35C007DCB56 /* SignOutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutStore.swift; sourceTree = "<group>"; };
 		EC578F8D28D9F512007DCB56 /* SignInEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEventHandling.swift; sourceTree = "<group>"; };
+		EC578F8F28D9FDB9007DCB56 /* ValidationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManagerTests.swift; sourceTree = "<group>"; };
+		ECB6ADBA28EAC8A500A173F9 /* MockJsonAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJsonAPIManager.swift; sourceTree = "<group>"; };
+		ECB6ADBC28EAC97E00A173F9 /* SignOutStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutStoreTests.swift; sourceTree = "<group>"; };
+		ECB6ADBE28EAC9CD00A173F9 /* MockJsonSignOutStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJsonSignOutStoreTests.swift; sourceTree = "<group>"; };
 		ECFB154B28D86C33004A027C /* SignMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFB154E28D86C33004A027C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECFB155028D86C33004A027C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +82,7 @@
 		ECFB156528D86C34004A027C /* SignMeAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignMeAppTests.swift; sourceTree = "<group>"; };
 		ECFB156B28D86C34004A027C /* SignMeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignMeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFB156F28D86C34004A027C /* SignMeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignMeAppUITests.swift; sourceTree = "<group>"; };
+		ECFB157128D86C34004A027C /* SignMeAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignMeAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ECFB158228D87151004A027C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		ECFB158A28D871B9004A027C /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		ECFB158C28D871D3004A027C /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
@@ -189,6 +201,10 @@
 			isa = PBXGroup;
 			children = (
 				ECFB156528D86C34004A027C /* SignMeAppTests.swift */,
+				EC578F8F28D9FDB9007DCB56 /* ValidationManagerTests.swift */,
+				EC40A8B928E320B70008DF11 /* SignInStoreTests.swift */,
+				ECB6ADBC28EAC97E00A173F9 /* SignOutStoreTests.swift */,
+				ECB6ADBE28EAC9CD00A173F9 /* MockJsonSignOutStoreTests.swift */,
 			);
 			path = SignMeAppTests;
 			sourceTree = "<group>";
@@ -197,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				ECFB156F28D86C34004A027C /* SignMeAppUITests.swift */,
+				ECFB157128D86C34004A027C /* SignMeAppUITestsLaunchTests.swift */,
 			);
 			path = SignMeAppUITests;
 			sourceTree = "<group>";
@@ -283,6 +300,7 @@
 				ECFB159728D8763A004A027C /* Utils */,
 				ECFB159928D87651004A027C /* APIManager.swift */,
 				ECFB159C28D87686004A027C /* Endpoint.swift */,
+				ECB6ADBA28EAC8A500A173F9 /* MockJsonAPIManager.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -447,6 +465,7 @@
 				ECFB158B28D871B9004A027C /* Configuration.swift in Sources */,
 				EC578F8628D9D891007DCB56 /* SignInView.swift in Sources */,
 				ECFB15A728D876CA004A027C /* UserRouter.swift in Sources */,
+				ECB6ADBB28EAC8A500A173F9 /* MockJsonAPIManager.swift in Sources */,
 				ECFB159A28D87651004A027C /* APIManager.swift in Sources */,
 				EC578F8C28D9E35C007DCB56 /* SignOutStore.swift in Sources */,
 				ECFB159D28D87686004A027C /* Endpoint.swift in Sources */,
@@ -465,7 +484,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC578F9028D9FDB9007DCB56 /* ValidationManagerTests.swift in Sources */,
+				ECB6ADBF28EAC9CD00A173F9 /* MockJsonSignOutStoreTests.swift in Sources */,
 				ECFB156628D86C34004A027C /* SignMeAppTests.swift in Sources */,
+				EC40A8BA28E320B70008DF11 /* SignInStoreTests.swift in Sources */,
+				ECB6ADBD28EAC97E00A173F9 /* SignOutStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECFB157028D86C34004A027C /* SignMeAppUITests.swift in Sources */,
+				ECFB157228D86C34004A027C /* SignMeAppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
