@@ -48,14 +48,14 @@ private extension SignCoordinator {
         // dependency injection used here
         let signOutStore = container.signOutStore
         // creating view
-        let view = SignOutView(store: signOutStore)
+        let view = SignOutView(store: signOutStore, coordinator: self)
         // wrapping SwiftUI view for UIKit navigation
         return UIHostingController(rootView: view)
     }
 }
 
 // MARK: Navigation
-extension SignCoordinator: SignInEventHandling {
+extension SignCoordinator: SignInEventHandling, SignOutEventHandling {
     func handle(event: SignInView.Event) {
         // coordinator handling navigation Events from SignInView
         switch event {
@@ -70,6 +70,13 @@ extension SignCoordinator: SignInEventHandling {
                 viewController,
                 animated: true
             )
+        }
+    }
+
+    func handle(event: SignOutView.Event) {
+        switch event {
+        case .signOut:
+            navigationController.popViewController(animated: true)
         }
     }
 }

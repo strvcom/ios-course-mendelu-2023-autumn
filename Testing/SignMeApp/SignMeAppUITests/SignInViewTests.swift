@@ -50,7 +50,7 @@ class SignInViewTests: XCTestCase {
         XCTAssert(secureField.exists)
         XCTAssert(button.exists)
     }
-    
+
     func testEmail() {
         let textField = app.textFields["signInTextField"]
         let myEmail = "xxx.yyy@gmail.com"

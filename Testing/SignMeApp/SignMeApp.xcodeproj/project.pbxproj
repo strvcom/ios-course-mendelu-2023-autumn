@@ -18,6 +18,7 @@
 		EC578F8E28D9F512007DCB56 /* SignInEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC578F8D28D9F512007DCB56 /* SignInEventHandling.swift */; };
 		EC578F9028D9FDB9007DCB56 /* ValidationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC578F8F28D9FDB9007DCB56 /* ValidationManagerTests.swift */; };
 		EC578F9228DA0073007DCB56 /* SignInViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC578F9128DA0073007DCB56 /* SignInViewTests.swift */; };
+		EC7052402AF031E0005ADF09 /* SignOutEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70523F2AF031E0005ADF09 /* SignOutEventHandling.swift */; };
 		ECB6ADBB28EAC8A500A173F9 /* MockJsonAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB6ADBA28EAC8A500A173F9 /* MockJsonAPIManager.swift */; };
 		ECB6ADBD28EAC97E00A173F9 /* SignOutStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB6ADBC28EAC97E00A173F9 /* SignOutStoreTests.swift */; };
 		ECB6ADBF28EAC9CD00A173F9 /* MockJsonSignOutStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB6ADBE28EAC9CD00A173F9 /* MockJsonSignOutStoreTests.swift */; };
@@ -75,6 +76,7 @@
 		EC578F8D28D9F512007DCB56 /* SignInEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEventHandling.swift; sourceTree = "<group>"; };
 		EC578F8F28D9FDB9007DCB56 /* ValidationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManagerTests.swift; sourceTree = "<group>"; };
 		EC578F9128DA0073007DCB56 /* SignInViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewTests.swift; sourceTree = "<group>"; };
+		EC70523F2AF031E0005ADF09 /* SignOutEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutEventHandling.swift; sourceTree = "<group>"; };
 		ECB6ADBA28EAC8A500A173F9 /* MockJsonAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJsonAPIManager.swift; sourceTree = "<group>"; };
 		ECB6ADBC28EAC97E00A173F9 /* SignOutStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutStoreTests.swift; sourceTree = "<group>"; };
 		ECB6ADBE28EAC9CD00A173F9 /* MockJsonSignOutStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJsonSignOutStoreTests.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			children = (
 				EC578F8928D9E27D007DCB56 /* SignOutView.swift */,
 				EC578F8B28D9E35C007DCB56 /* SignOutStore.swift */,
+				EC70523F2AF031E0005ADF09 /* SignOutEventHandling.swift */,
 			);
 			path = SignOut;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				ECFB15A428D876B4004A027C /* HTTPMethod.swift in Sources */,
 				ECFB155128D86C33004A027C /* SceneDelegate.swift in Sources */,
 				ECFB159028D87212004A027C /* Coordinator.swift in Sources */,
+				EC7052402AF031E0005ADF09 /* SignOutEventHandling.swift in Sources */,
 				EC578F8E28D9F512007DCB56 /* SignInEventHandling.swift in Sources */,
 				ECFB15A528D876B4004A027C /* APIError.swift in Sources */,
 			);
