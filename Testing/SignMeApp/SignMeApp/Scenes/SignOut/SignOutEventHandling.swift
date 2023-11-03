@@ -2,7 +2,7 @@
 //  SignOutEventHandling.swift
 //  SignMeApp
 //
-//  Created by Martin Vidovic on 28.10.2023.
+//  Created by Martin Vidovic on 30.10.2023.
 //
 
 import Foundation

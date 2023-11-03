@@ -29,12 +29,12 @@ final class MockJsonSignOutStoreTests: XCTestCase {
         signOutStore = nil
         cancellables = nil
     }
-    
+
     func testInit() {
         // user at start should be nil
         XCTAssertNil(signOutStore.user)
     }
-    
+
     func testUser() {
         // set expectation
         let expectation = expectation(description: "UserPublisher")

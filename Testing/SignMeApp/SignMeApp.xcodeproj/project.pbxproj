@@ -21,6 +21,11 @@
 		ECB6ADBD28EAC97E00A173F9 /* SignOutStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB6ADBC28EAC97E00A173F9 /* SignOutStoreTests.swift */; };
 		ECB6ADBF28EAC9CD00A173F9 /* MockJsonSignOutStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB6ADBE28EAC9CD00A173F9 /* MockJsonSignOutStoreTests.swift */; };
 		ECC666D52AECE8F70041ABF0 /* SignOutEventHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC666D42AECE8F70041ABF0 /* SignOutEventHandling.swift */; };
+		ECCEF51E2AF4D697006AE064 /* SignInScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCEF5162AF4D697006AE064 /* SignInScene.swift */; };
+		ECCEF51F2AF4D697006AE064 /* AdvancedSignInViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCEF5172AF4D697006AE064 /* AdvancedSignInViewTests.swift */; };
+		ECCEF5202AF4D697006AE064 /* XCUIApplication+Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCEF51A2AF4D697006AE064 /* XCUIApplication+Scenes.swift */; };
+		ECCEF5212AF4D697006AE064 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCEF51C2AF4D697006AE064 /* Scene.swift */; };
+		ECCEF5222AF4D697006AE064 /* SignInViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCEF51D2AF4D697006AE064 /* SignInViewTests.swift */; };
 		ECFB154F28D86C33004A027C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB154E28D86C33004A027C /* AppDelegate.swift */; };
 		ECFB155128D86C33004A027C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB155028D86C33004A027C /* SceneDelegate.swift */; };
 		ECFB155828D86C34004A027C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECFB155728D86C34004A027C /* Assets.xcassets */; };
@@ -74,6 +79,11 @@
 		ECB6ADBC28EAC97E00A173F9 /* SignOutStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutStoreTests.swift; sourceTree = "<group>"; };
 		ECB6ADBE28EAC9CD00A173F9 /* MockJsonSignOutStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJsonSignOutStoreTests.swift; sourceTree = "<group>"; };
 		ECC666D42AECE8F70041ABF0 /* SignOutEventHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutEventHandling.swift; sourceTree = "<group>"; };
+		ECCEF5162AF4D697006AE064 /* SignInScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScene.swift; sourceTree = "<group>"; };
+		ECCEF5172AF4D697006AE064 /* AdvancedSignInViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedSignInViewTests.swift; sourceTree = "<group>"; };
+		ECCEF51A2AF4D697006AE064 /* XCUIApplication+Scenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Scenes.swift"; sourceTree = "<group>"; };
+		ECCEF51C2AF4D697006AE064 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		ECCEF51D2AF4D697006AE064 /* SignInViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewTests.swift; sourceTree = "<group>"; };
 		ECFB154B28D86C33004A027C /* SignMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFB154E28D86C33004A027C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECFB155028D86C33004A027C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +180,49 @@
 			path = SignOut;
 			sourceTree = "<group>";
 		};
+		ECCEF5142AF4D697006AE064 /* Advanced Testing */ = {
+			isa = PBXGroup;
+			children = (
+				ECCEF5152AF4D697006AE064 /* Scenes */,
+				ECCEF5182AF4D697006AE064 /* Common */,
+			);
+			path = "Advanced Testing";
+			sourceTree = "<group>";
+		};
+		ECCEF5152AF4D697006AE064 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				ECCEF5162AF4D697006AE064 /* SignInScene.swift */,
+				ECCEF5172AF4D697006AE064 /* AdvancedSignInViewTests.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		ECCEF5182AF4D697006AE064 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ECCEF5192AF4D697006AE064 /* Extensions */,
+				ECCEF51B2AF4D697006AE064 /* Protocols */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		ECCEF5192AF4D697006AE064 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ECCEF51A2AF4D697006AE064 /* XCUIApplication+Scenes.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ECCEF51B2AF4D697006AE064 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				ECCEF51C2AF4D697006AE064 /* Scene.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		ECFB154228D86C33004A027C = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +268,8 @@
 		ECFB156E28D86C34004A027C /* SignMeAppUITests */ = {
 			isa = PBXGroup;
 			children = (
+				ECCEF5142AF4D697006AE064 /* Advanced Testing */,
+				ECCEF51D2AF4D697006AE064 /* SignInViewTests.swift */,
 				ECFB156F28D86C34004A027C /* SignMeAppUITests.swift */,
 				ECFB157128D86C34004A027C /* SignMeAppUITestsLaunchTests.swift */,
 			);
@@ -500,7 +555,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECCEF51F2AF4D697006AE064 /* AdvancedSignInViewTests.swift in Sources */,
+				ECCEF5202AF4D697006AE064 /* XCUIApplication+Scenes.swift in Sources */,
+				ECCEF5212AF4D697006AE064 /* Scene.swift in Sources */,
 				ECFB157028D86C34004A027C /* SignMeAppUITests.swift in Sources */,
+				ECCEF5222AF4D697006AE064 /* SignInViewTests.swift in Sources */,
+				ECCEF51E2AF4D697006AE064 /* SignInScene.swift in Sources */,
 				ECFB157228D86C34004A027C /* SignMeAppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,7 @@ struct SignOutView: View {
     enum Event {
         case signOut
     }
+
     @StateObject var store: SignOutStore
     weak var coordinator: SignOutEventHandling?
 

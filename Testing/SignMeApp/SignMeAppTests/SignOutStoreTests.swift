@@ -26,11 +26,11 @@ final class SignOutStoreTests: XCTestCase {
         signOutStore = nil
         cancellables = nil
     }
-    
+
     func testInit() {
         XCTAssertNil(signOutStore.user)
     }
-    
+
     func testUser() {
         // set expectation
         let expectation = expectation(description: "UserPublisher")
@@ -56,5 +56,7 @@ final class SignOutStoreTests: XCTestCase {
         // we can't compare users because we receive random user from Backend
         // so we can test if we received any result -> user should not be nil
         XCTAssertNotNil(result)
+
+
     }
 }
