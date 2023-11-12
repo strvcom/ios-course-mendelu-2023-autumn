@@ -11,9 +11,9 @@ enum Assets {}
 
 // MARK: Textures
 extension Assets {
-    static let background = SKTexture(imageNamed: "background")
-    static let pipe = SKTexture(imageNamed: "pipe")
-    static let base = SKTexture(imageNamed: "base")
+    static let background = SKSpriteNode(imageNamed: "background")
+    static let pipe = SKSpriteNode(imageNamed: "pipe")
+    static let base = SKSpriteNode(imageNamed: "base")
     static let bird = SKTextureAtlas(named: "bird")
 }
 
