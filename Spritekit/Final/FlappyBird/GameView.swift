@@ -10,7 +10,7 @@ import SpriteKit
 
 struct GameView {
     // MARK: Properties
-    @State private var scene = GameScene(size: Assets.background.size)
+    @State private var scene = GameScene(size: Background().size)
 }
 
 // MARK: View

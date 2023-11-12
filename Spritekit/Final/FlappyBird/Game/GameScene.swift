@@ -7,10 +7,27 @@
 
 import SpriteKit
 import SwiftUI
+import AVFoundation
 
 final class GameScene: SKScene {
     // MARK: Properties
-    private var bird: SKSpriteNode!
+    private let bird = Bird()
+    private let base = Base()
+    private var pipes = [Pipe]()
+    
+    private let pointSound = SKAction.playSoundFileNamed(
+        Assets.Sounds.point,
+        waitForCompletion: false
+    )
+    
+    private let hitSound = SKAction.playSoundFileNamed(
+        Assets.Sounds.hit,
+        waitForCompletion: false
+    )
+    
+    private var sceneCenterY: CGFloat {
+        size.height * 0.5
+    }
     
     // MARK: Overrides
     override func willMove(from view: SKView) {
@@ -22,88 +39,150 @@ final class GameScene: SKScene {
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
-        setupScene()
+        addChild(Background())
+        
+        addChild(base)
+        
+        addChild(bird)
+        
+        bird.position = CGPoint(
+            x: size.width * 0.3,
+            y: sceneCenterY
+        )
+        
+        physicsWorld.contactDelegate = self
+        physicsWorld.gravity = CGVector(
+            dx: 0,
+            dy: -5
+        )
+        
+        createTopBoundary()
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("AVAudioSession setup error \(error)")
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
         
-        if let velocity = bird?.physicsBody?.velocity.dy {
-            let test = velocity.normalize(
-                min: -2000,
-                max: 2000,
-                from: -(.pi / 2),
-                to: .pi / 2
-            )
-            
-            bird.zRotation = test
-        }
+        bird.updateRotation()
+        
+        updatePipes()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
-        bird.physicsBody?.applyImpulse(
-            CGVector(
-                dx: 0,
-                dy: bird.size.height
-            )
-        )
+        bird.flapWings()
+    }
+}
+
+// MARK: SKPhysicsContactDelegate
+extension GameScene: SKPhysicsContactDelegate {
+    func didBegin(_ contact: SKPhysicsContact) {
+        let contactBody = if contact.bodyA.node?.name == NodeName.bird {
+            contact.bodyB
+        } else {
+            contact.bodyA
+        }
+        
+        switch contactBody.node?.name {
+        case NodeName.pipe, NodeName.base:
+//            run(
+//                SKAction.playSoundFileNamed(
+//                    Assets.Sounds.hit,
+//                    waitForCompletion: false
+//                )
+//            )
+            break
+        case NodeName.pipeHole:
+            run(pointSound)
+        default:
+            break
+        }
     }
 }
 
 // MARK: Private API
-extension GameScene {
-    func setupScene() {
-        let background = Assets.background
-        background.zPosition = Layer.background
-        background.anchorPoint = .zero
-        
-        addChild(background)
-        
-        let base = Assets.base
-        base.zPosition = Layer.base
-        base.anchorPoint = .zero
-        base.position = CGPoint(
+private extension GameScene {
+    func createTopBoundary() {
+        let node = SKNode()
+        node.position = CGPoint(
             x: 0,
-            y: -40
+            y: size.height
         )
-        base.physicsBody = SKPhysicsBody(
-            rectangleOf: base.size,
-            center: CGPoint(
-                x: base.size.width * 0.5,
-                y: base.size.height * 0.5
+        node.physicsBody = SKPhysicsBody(
+            rectangleOf: CGSize(
+                width: size.width,
+                height: 1
             )
         )
-        base.physicsBody?.categoryBitMask = Physics.CategoryBitMask.base
-        base.physicsBody?.collisionBitMask = Physics.CollisionBitMask.base
-        base.physicsBody?.affectedByGravity = false
-        base.physicsBody?.isDynamic = false
+        node.physicsBody?.isDynamic = false
+        node.physicsBody?.friction = 0
+        node.physicsBody?.restitution = 0
+        node.physicsBody?.categoryBitMask = Physics.CategoryBitMask.sceneBorder
+        node.physicsBody?.collisionBitMask = Physics.CollisionBitMask.sceneBorder
         
-        addChild(base)
+        addChild(node)
+    }
+    
+    func updatePipes() {
+        guard !pipes.isEmpty else {
+            return spawnPipe()
+        }
         
-        let birdTextures = Assets.bird.textures
-        bird = SKSpriteNode(texture: birdTextures.first)
-        bird.zPosition = Layer.bird
-        bird.position = CGPoint(
-            x: size.width / 2,
-            y: size.height / 2
+        // Move all pipes to left
+        pipes.forEach { $0.position.x -= 1.5 }
+        
+        // Remove all pipes on left
+        pipes.filter { $0.scenePosition == .onLeft }
+            .forEach { removePipe($0) }
+        
+        // Spawn pipe if needed
+        if let pipe = pipes.last {
+            let distanceBetweenPipes: CGFloat = bird.size.width * 4
+            
+            if pipe.position.x + distanceBetweenPipes < size.width + 26 {
+                spawnPipe()
+            }
+        }
+    }
+    
+    func spawnPipe() {
+        let holeHeight = bird.size.height * 4
+        
+        let lastPipeYPosition = (pipes.last?.position.y ?? sceneCenterY)
+        
+        let randomOffset = CGFloat.random(in: -150 ... 150)
+        
+        let topYOffsetTreshold = size.height - holeHeight * 0.5
+        
+        let bottomYOffsetTreshold = base.position.y + base.size.height + holeHeight * 0.5
+        
+        var pipeYPosition = lastPipeYPosition + randomOffset
+        if pipeYPosition > topYOffsetTreshold
+            || pipeYPosition < bottomYOffsetTreshold {
+            pipeYPosition = lastPipeYPosition - randomOffset
+        }
+        
+        let pipe = Pipe(holeHeight: holeHeight)
+        pipe.position = CGPoint(
+            x: size.width + pipe.width * 0.5,
+            y: pipeYPosition
         )
-        bird.run(
-            SKAction.repeatForever(
-                SKAction.animate(
-                    with: birdTextures,
-                    timePerFrame: 0.3,
-                    resize: false,
-                    restore: true
-                )
-            )
-        )
-        bird.physicsBody = SKPhysicsBody(rectangleOf: birdTextures.first?.size() ?? .zero)
-        bird.physicsBody?.categoryBitMask = Physics.CategoryBitMask.bird
-        bird.physicsBody?.collisionBitMask = Physics.CollisionBitMask.bird
-        bird.physicsBody?.contactTestBitMask = Physics.ContactTestBitMask.bird
         
-        addChild(bird)
+        pipes.append(pipe)
+        
+        addChild(pipe)
+    }
+    
+    func removePipe(_ pipe: Pipe) {
+        pipes.removeAll(where: { $0 === pipe })
+        
+        pipe.removeFromParent()
     }
 }

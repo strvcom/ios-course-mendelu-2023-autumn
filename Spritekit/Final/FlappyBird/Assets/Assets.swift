@@ -11,17 +11,20 @@ enum Assets {}
 
 // MARK: Textures
 extension Assets {
-    static let background = SKSpriteNode(imageNamed: "background")
-    static let pipe = SKSpriteNode(imageNamed: "pipe")
-    static let base = SKSpriteNode(imageNamed: "base")
-    static let bird = SKTextureAtlas(named: "bird")
+    enum Textures {
+        static let background = "background"
+        static let pipe = "pipe"
+        static let base = "base"
+        static let bird = "bird"
+    }
 }
 
 // MARK: Sounds
 extension Assets {
-    static let die = "die.waw"
-    static let hit = "hit.waw"
-    static let point = "point.waw"
-    static let swoosh = "swoosh.waw"
-    static let wing = "wing.waw"
+    enum Sounds {
+        static let die = "die.wav"
+        static let hit = "hit.wav"
+        static let point = "point.wav"
+        static let wing = "wing.wav"
+    }
 }

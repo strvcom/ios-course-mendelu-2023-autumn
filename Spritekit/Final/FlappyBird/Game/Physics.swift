@@ -19,6 +19,8 @@ extension Physics {
         static let base: UInt32 = 0b1
         static let bird: UInt32 = 0b10
         static let pipe: UInt32 = 0b100
+        static let hole: UInt32 = 0b1000
+        static let sceneBorder: UInt32 = 0b10000
     }
 }
 
@@ -31,8 +33,9 @@ extension Physics {
     /// this body is affected by the collision.
     enum CollisionBitMask {
         static let base = Physics.CategoryBitMask.bird
-        static let bird = Physics.CategoryBitMask.base | Physics.CategoryBitMask.pipe
+        static let bird = Physics.CategoryBitMask.base | Physics.CategoryBitMask.pipe | Physics.CategoryBitMask.sceneBorder
         static let pipe = Physics.CategoryBitMask.bird
+        static let sceneBorder = Physics.CategoryBitMask.bird
     }
 }
 
@@ -45,6 +48,7 @@ extension Physics {
     /// in a nonzero value, an SKPhysicsContact object is created
     /// and passed to the physics world’s delegate.
     enum ContactTestBitMask {
-        static let bird = Physics.CategoryBitMask.base | Physics.CategoryBitMask.pipe
+        static let bird = Physics.CategoryBitMask.base | Physics.CategoryBitMask.pipe | Physics.CategoryBitMask.hole
+        static let hole = Physics.CategoryBitMask.bird
     }
 }
