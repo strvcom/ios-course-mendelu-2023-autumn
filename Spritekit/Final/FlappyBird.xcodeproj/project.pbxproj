@@ -20,6 +20,8 @@
 		590415E32B00C25D00B50C37 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415E22B00C25D00B50C37 /* Layer.swift */; };
 		590415E62B00C57500B50C37 /* SKTextureAtlas+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415E52B00C57500B50C37 /* SKTextureAtlas+Extension.swift */; };
 		590415E92B00C7D900B50C37 /* bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 590415E82B00C7D900B50C37 /* bird.atlas */; };
+		590415EB2B00C92A00B50C37 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415EA2B00C92A00B50C37 /* Physics.swift */; };
+		590415ED2B00F5C300B50C37 /* BinaryFloatingPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415EC2B00F5C300B50C37 /* BinaryFloatingPoint+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		590415E22B00C25D00B50C37 /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
 		590415E52B00C57500B50C37 /* SKTextureAtlas+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTextureAtlas+Extension.swift"; sourceTree = "<group>"; };
 		590415E82B00C7D900B50C37 /* bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bird.atlas; sourceTree = "<group>"; };
+		590415EA2B00C92A00B50C37 /* Physics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physics.swift; sourceTree = "<group>"; };
+		590415EC2B00F5C300B50C37 /* BinaryFloatingPoint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryFloatingPoint+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 			children = (
 				590415DF2B00BEA900B50C37 /* GameScene.swift */,
 				590415E22B00C25D00B50C37 /* Layer.swift */,
+				590415EA2B00C92A00B50C37 /* Physics.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				590415E52B00C57500B50C37 /* SKTextureAtlas+Extension.swift */,
+				590415EC2B00F5C300B50C37 /* BinaryFloatingPoint+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,10 +200,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				590415C52B00B89F00B50C37 /* GameView.swift in Sources */,
+				590415ED2B00F5C300B50C37 /* BinaryFloatingPoint+Extension.swift in Sources */,
 				590415C32B00B89F00B50C37 /* FlappyBirdApp.swift in Sources */,
 				590415E32B00C25D00B50C37 /* Layer.swift in Sources */,
 				590415E02B00BEA900B50C37 /* GameScene.swift in Sources */,
 				590415DE2B00BCFC00B50C37 /* Assets.swift in Sources */,
+				590415EB2B00C92A00B50C37 /* Physics.swift in Sources */,
 				590415E62B00C57500B50C37 /* SKTextureAtlas+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

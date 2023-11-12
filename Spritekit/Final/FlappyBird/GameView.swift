@@ -21,7 +21,8 @@ extension GameView: View {
             preferredFramesPerSecond: 30,
             debugOptions: [
                 .showsFPS,
-                .showsPhysics
+                .showsPhysics,
+                .showsNodeCount
             ]
         )
         .ignoresSafeArea()
