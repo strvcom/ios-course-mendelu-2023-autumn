@@ -27,7 +27,10 @@ final class Bird: SKSpriteNode {
         zPosition = Layer.bird
         name = NodeName.bird
         
-        physicsBody = SKPhysicsBody(rectangleOf: size)
+        physicsBody = SKPhysicsBody(
+            texture: texture ?? SKTexture(),
+            size: texture?.size() ?? .zero
+        )
         physicsBody?.categoryBitMask = Physics.CategoryBitMask.bird
         physicsBody?.collisionBitMask = Physics.CollisionBitMask.bird
         physicsBody?.contactTestBitMask = Physics.ContactTestBitMask.bird

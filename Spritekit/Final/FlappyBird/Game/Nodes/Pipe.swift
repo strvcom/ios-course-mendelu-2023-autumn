@@ -12,6 +12,8 @@ final class Pipe: SKNode {
     private let holeHeight: CGFloat
     
     let width: CGFloat
+    /// Value, which says if the bird already flew over the pipe.
+    var scoreCounted = false
     
     var scenePosition: ScenePosition {
         guard let scene = parent as? SKScene else {

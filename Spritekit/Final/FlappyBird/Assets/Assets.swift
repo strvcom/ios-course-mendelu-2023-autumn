@@ -28,3 +28,10 @@ extension Assets {
         static let wing = "wing.wav"
     }
 }
+
+// MARK: Fonts
+extension Assets {
+    enum Fonts {
+        static let flappy = "04b_19"
+    }
+}

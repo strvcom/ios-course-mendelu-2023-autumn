@@ -28,8 +28,3 @@ extension GameView: View {
         .ignoresSafeArea()
     }
 }
-
-// MARK: Previews
-#Preview {
-    GameView()
-}

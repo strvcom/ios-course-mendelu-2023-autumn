@@ -13,6 +13,7 @@ final class GameScene: SKScene {
     // MARK: Properties
     private let bird = Bird()
     private let base = Base()
+    private let score = Score()
     private var pipes = [Pipe]()
     
     private let pointSound = SKAction.playSoundFileNamed(
@@ -40,10 +41,14 @@ final class GameScene: SKScene {
         super.didMove(to: view)
         
         addChild(Background())
-        
         addChild(base)
-        
         addChild(bird)
+        addChild(score)
+        
+        score.position = CGPoint(
+            x: size.width * 0.5,
+            y: size.height - 75
+        )
         
         bird.position = CGPoint(
             x: size.width * 0.3,
@@ -92,15 +97,9 @@ extension GameScene: SKPhysicsContactDelegate {
         
         switch contactBody.node?.name {
         case NodeName.pipe, NodeName.base:
-//            run(
-//                SKAction.playSoundFileNamed(
-//                    Assets.Sounds.hit,
-//                    waitForCompletion: false
-//                )
-//            )
             break
         case NodeName.pipeHole:
-            run(pointSound)
+            increaseScore(node: contactBody.node)
         default:
             break
         }
@@ -135,21 +134,37 @@ private extension GameScene {
             return spawnPipe()
         }
         
-        // Move all pipes to left
+        movePipes()
+        
+        removePipesOnLeft()
+        
+        spawnPipeIfNeeded()
+    }
+    
+    func movePipes() {
         pipes.forEach { $0.position.x -= 1.5 }
-        
-        // Remove all pipes on left
+    }
+    
+    func removePipesOnLeft() {
         pipes.filter { $0.scenePosition == .onLeft }
-            .forEach { removePipe($0) }
-        
-        // Spawn pipe if needed
-        if let pipe = pipes.last {
-            let distanceBetweenPipes: CGFloat = bird.size.width * 4
-            
-            if pipe.position.x + distanceBetweenPipes < size.width + 26 {
-                spawnPipe()
+            .forEach { pipe in
+                pipes.removeAll(where: { $0 === pipe })
+                
+                pipe.removeFromParent()
             }
+    }
+    
+    func spawnPipeIfNeeded() {
+        let distanceBetweenPipes: CGFloat = bird.size.width * 4
+        
+        guard 
+            let pipe = pipes.last,
+            pipe.position.x + distanceBetweenPipes < size.width + pipe.width * 0.5
+        else {
+            return
         }
+        
+        spawnPipe()
     }
     
     func spawnPipe() {
@@ -180,9 +195,18 @@ private extension GameScene {
         addChild(pipe)
     }
     
-    func removePipe(_ pipe: Pipe) {
-        pipes.removeAll(where: { $0 === pipe })
+    func increaseScore(node: SKNode?) {
+        guard 
+            let pipe = node?.parent as? Pipe,
+            !pipe.scoreCounted
+        else {
+            return
+        }
         
-        pipe.removeFromParent()
+        pipe.scoreCounted = true
+        
+        score.score += 1
+        
+        run(pointSound)
     }
 }
