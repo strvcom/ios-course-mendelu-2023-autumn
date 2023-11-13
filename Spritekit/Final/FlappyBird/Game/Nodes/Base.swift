@@ -18,6 +18,7 @@ final class Base: SKSpriteNode {
             size: texture.size()
         )
         
+        name = NodeName.base
         zPosition = Layer.base
         anchorPoint = .zero
         position = CGPoint(

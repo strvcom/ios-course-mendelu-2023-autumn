@@ -8,6 +8,7 @@
 import SpriteKit
 import SwiftUI
 import AVFoundation
+import GameplayKit
 
 final class GameScene: SKScene {
     // MARK: Properties
@@ -15,6 +16,13 @@ final class GameScene: SKScene {
     private let base = Base()
     private let score = Score()
     private var pipes = [Pipe]()
+    
+    private lazy var stateMachine = GKStateMachine(
+        states: [
+            GameStateRunning(),
+            GameStateFinished(gameScene: self)
+        ]
+    )
     
     private let pointSound = SKAction.playSoundFileNamed(
         Assets.Sounds.point,
@@ -44,6 +52,7 @@ final class GameScene: SKScene {
         addChild(base)
         addChild(bird)
         addChild(score)
+        addChild(TopBoundaryNode(gameSceneSize: size))
         
         score.position = CGPoint(
             x: size.width * 0.5,
@@ -61,18 +70,22 @@ final class GameScene: SKScene {
             dy: -5
         )
         
-        createTopBoundary()
-        
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback)
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
             print("AVAudioSession setup error \(error)")
         }
+        
+        stateMachine.enter(GameStateRunning.self)
     }
     
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
+        
+        guard stateMachine.currentState is GameStateRunning else {
+            return
+        }
         
         bird.updateRotation()
         
@@ -82,6 +95,10 @@ final class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
+        guard stateMachine.currentState is GameStateRunning else {
+            return
+        }
+        
         bird.flapWings()
     }
 }
@@ -89,6 +106,10 @@ final class GameScene: SKScene {
 // MARK: SKPhysicsContactDelegate
 extension GameScene: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
+        guard stateMachine.currentState is GameStateRunning else {
+            return
+        }
+        
         let contactBody = if contact.bodyA.node?.name == NodeName.bird {
             contact.bodyB
         } else {
@@ -97,7 +118,7 @@ extension GameScene: SKPhysicsContactDelegate {
         
         switch contactBody.node?.name {
         case NodeName.pipe, NodeName.base:
-            break
+            stateMachine.enter(GameStateFinished.self)
         case NodeName.pipeHole:
             increaseScore(node: contactBody.node)
         default:
@@ -106,29 +127,17 @@ extension GameScene: SKPhysicsContactDelegate {
     }
 }
 
+// MARK: Public API
+extension GameScene {
+    func endGame() {
+        run(hitSound)
+        
+        
+    }
+}
+
 // MARK: Private API
 private extension GameScene {
-    func createTopBoundary() {
-        let node = SKNode()
-        node.position = CGPoint(
-            x: 0,
-            y: size.height
-        )
-        node.physicsBody = SKPhysicsBody(
-            rectangleOf: CGSize(
-                width: size.width,
-                height: 1
-            )
-        )
-        node.physicsBody?.isDynamic = false
-        node.physicsBody?.friction = 0
-        node.physicsBody?.restitution = 0
-        node.physicsBody?.categoryBitMask = Physics.CategoryBitMask.sceneBorder
-        node.physicsBody?.collisionBitMask = Physics.CollisionBitMask.sceneBorder
-        
-        addChild(node)
-    }
-    
     func updatePipes() {
         guard !pipes.isEmpty else {
             return spawnPipe()
