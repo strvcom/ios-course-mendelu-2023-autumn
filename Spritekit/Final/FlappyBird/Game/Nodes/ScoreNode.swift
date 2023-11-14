@@ -1,5 +1,5 @@
 //
-//  Score.swift
+//  ScoreNode.swift
 //  FlappyBird
 //
 //  Created by Róbert Oravec on 13.11.2023.
@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-final class Score: SKLabelNode {
+final class ScoreNode: SKLabelNode {
     // MARK: Properties
     var score = 0 {
         didSet {
@@ -29,7 +29,7 @@ final class Score: SKLabelNode {
 }
 
 // MARK: Private API
-private extension Score {
+private extension ScoreNode {
     func updateText() {
         attributedText = NSAttributedString(
             string: "\(score)",

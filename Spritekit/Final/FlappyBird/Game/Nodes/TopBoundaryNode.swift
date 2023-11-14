@@ -9,16 +9,12 @@ import SpriteKit
 
 final class TopBoundaryNode: SKNode {
     // MARK: Init
-    init(gameSceneSize: CGSize) {
+    init(width: CGFloat) {
         super.init()
         
-        position = CGPoint(
-            x: 0,
-            y: gameSceneSize.height
-        )
         physicsBody = SKPhysicsBody(
             rectangleOf: CGSize(
-                width: gameSceneSize.width,
+                width: width,
                 height: 1
             )
         )

@@ -10,14 +10,15 @@ import SpriteKit
 
 struct GameView {
     // MARK: Properties
-    @State private var scene = GameScene(size: Background().size)
+    @StateObject private var game = Game()
 }
 
 // MARK: View
 extension GameView: View {
     var body: some View {
         SpriteView(
-            scene: scene,
+            scene: game.scene,
+            transition: .crossFade(withDuration: 10),
             preferredFramesPerSecond: 30,
             debugOptions: [
                 .showsFPS,

@@ -1,5 +1,5 @@
 //
-//  Base.swift
+//  BaseNode.swift
 //  FlappyBird
 //
 //  Created by Róbert Oravec on 12.11.2023.
@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-final class Base: SKSpriteNode {
+final class BaseNode: SKSpriteNode {
     // MARK: Init
     init() {
         let texture = SKTexture(imageNamed: Assets.Textures.base)

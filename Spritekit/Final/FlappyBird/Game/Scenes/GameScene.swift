@@ -12,17 +12,12 @@ import GameplayKit
 
 final class GameScene: SKScene {
     // MARK: Properties
-    private let bird = Bird()
-    private let base = Base()
-    private let score = Score()
-    private var pipes = [Pipe]()
+    private let gameState: GKStateMachine
     
-    private lazy var stateMachine = GKStateMachine(
-        states: [
-            GameStateRunning(),
-            GameStateFinished(gameScene: self)
-        ]
-    )
+    private lazy var bird = BirdNode()
+    private lazy var base = BaseNode()
+    private lazy var score = ScoreNode()
+    private var pipes = [PipeNode]()
     
     private let pointSound = SKAction.playSoundFileNamed(
         Assets.Sounds.point,
@@ -38,6 +33,20 @@ final class GameScene: SKScene {
         size.height * 0.5
     }
     
+    // MARK: Init
+    init(
+        size: CGSize,
+        gameState: GKStateMachine
+    ) {
+        self.gameState = gameState
+        
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: Overrides
     override func willMove(from view: SKView) {
         super.willMove(from: view)
@@ -48,11 +57,18 @@ final class GameScene: SKScene {
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
-        addChild(Background())
+        addChild(BackgroundNode())
         addChild(base)
         addChild(bird)
         addChild(score)
-        addChild(TopBoundaryNode(gameSceneSize: size))
+        
+        let topBoundaryNode = TopBoundaryNode(width: size.width)
+        topBoundaryNode.position = CGPoint(
+            x: 0,
+            y: size.height
+        )
+        
+        addChild(topBoundaryNode)
         
         score.position = CGPoint(
             x: size.width * 0.5,
@@ -76,14 +92,12 @@ final class GameScene: SKScene {
         } catch {
             print("AVAudioSession setup error \(error)")
         }
-        
-        stateMachine.enter(GameStateRunning.self)
     }
     
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
         
-        guard stateMachine.currentState is GameStateRunning else {
+        guard gameState.currentState is GameStateRunning else {
             return
         }
         
@@ -95,7 +109,7 @@ final class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
-        guard stateMachine.currentState is GameStateRunning else {
+        guard gameState.currentState is GameStateRunning else {
             return
         }
         
@@ -106,7 +120,7 @@ final class GameScene: SKScene {
 // MARK: SKPhysicsContactDelegate
 extension GameScene: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
-        guard stateMachine.currentState is GameStateRunning else {
+        guard gameState.currentState is GameStateRunning else {
             return
         }
         
@@ -118,21 +132,14 @@ extension GameScene: SKPhysicsContactDelegate {
         
         switch contactBody.node?.name {
         case NodeName.pipe, NodeName.base:
-            stateMachine.enter(GameStateFinished.self)
+            run(hitSound)
+            
+            gameState.enter(GameStateFinished.self)
         case NodeName.pipeHole:
             increaseScore(node: contactBody.node)
         default:
             break
         }
-    }
-}
-
-// MARK: Public API
-extension GameScene {
-    func endGame() {
-        run(hitSound)
-        
-        
     }
 }
 
@@ -193,7 +200,7 @@ private extension GameScene {
             pipeYPosition = lastPipeYPosition - randomOffset
         }
         
-        let pipe = Pipe(holeHeight: holeHeight)
+        let pipe = PipeNode(holeHeight: holeHeight)
         pipe.position = CGPoint(
             x: size.width + pipe.width * 0.5,
             y: pipeYPosition
@@ -206,7 +213,7 @@ private extension GameScene {
     
     func increaseScore(node: SKNode?) {
         guard 
-            let pipe = node?.parent as? Pipe,
+            let pipe = node?.parent as? PipeNode,
             !pipe.scoreCounted
         else {
             return

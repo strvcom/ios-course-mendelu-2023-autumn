@@ -1,5 +1,5 @@
 //
-//  Pipe.swift
+//  PipeNode.swift
 //  FlappyBird
 //
 //  Created by Róbert Oravec on 12.11.2023.
@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-final class Pipe: SKNode {
+final class PipeNode: SKNode {
     // MARK: Properties
     private let holeHeight: CGFloat
     
@@ -60,7 +60,7 @@ final class Pipe: SKNode {
 }
 
 // MARK: Scene position
-extension Pipe {
+extension PipeNode {
     enum ScenePosition {
         case onRight
         case visible
@@ -70,7 +70,7 @@ extension Pipe {
 }
 
 // MARK: Private API
-private extension Pipe {
+private extension PipeNode {
     func createPipe(texture: SKTexture) -> SKSpriteNode {
         let pipe = SKSpriteNode(texture: texture)
         pipe.name = NodeName.pipe

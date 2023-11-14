@@ -17,4 +17,5 @@ enum Layer {
     static let base: CGFloat = 2
     static let bird: CGFloat = 2
     static let score: CGFloat = 3
+    static let getReady: CGFloat = 3
 }

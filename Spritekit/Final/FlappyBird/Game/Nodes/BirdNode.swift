@@ -1,5 +1,5 @@
 //
-//  Bird.swift
+//  BirdNode.swift
 //  FlappyBird
 //
 //  Created by Róbert Oravec on 12.11.2023.
@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-final class Bird: SKSpriteNode {
+final class BirdNode: SKSpriteNode {
     // MARK: Properties
     private let wingFlapSound = SKAction.playSoundFileNamed(
         Assets.Sounds.wing,
@@ -54,7 +54,7 @@ final class Bird: SKSpriteNode {
 }
 
 // MARK: Public API
-extension Bird {
+extension BirdNode {
     func updateRotation() {
         guard let velocity = physicsBody?.velocity.dy else {
             return

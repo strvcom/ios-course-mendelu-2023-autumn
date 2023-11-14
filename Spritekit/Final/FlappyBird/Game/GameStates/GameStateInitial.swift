@@ -1,13 +1,13 @@
 //
-//  GameStateRunning.swift
+//  GameStateInitial.swift
 //  FlappyBird
 //
-//  Created by Róbert Oravec on 13.11.2023.
+//  Created by Róbert Oravec on 14.11.2023.
 //
 
 import GameplayKit
 
-final class GameStateRunning: GKState {
+final class GameStateInitial: GKState {
     // MARK: Properties
     private weak var game: Game?
     
@@ -18,14 +18,14 @@ final class GameStateRunning: GKState {
     
     // MARK: Overrides
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        stateClass is GameStateFinished.Type
+        stateClass is GameStateRunning.Type
     }
     
     override func didEnter(from previousState: GKState?) {
         super.didEnter(from: previousState)
         
-        print("[GAME STATE] Running")
+        print("[GAME STATE] Initial")
         
-        game?.openGameScene()
+        game?.openInitialScene()
     }
 }

@@ -16,6 +16,7 @@ extension Assets {
         static let pipe = "pipe"
         static let base = "base"
         static let bird = "bird"
+        static let getReady = "getReady"
     }
 }
 

@@ -20,16 +20,21 @@
 		590415E62B00C57500B50C37 /* SKTextureAtlas+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415E52B00C57500B50C37 /* SKTextureAtlas+Extension.swift */; };
 		590415E92B00C7D900B50C37 /* bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 590415E82B00C7D900B50C37 /* bird.atlas */; };
 		590415EB2B00C92A00B50C37 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415EA2B00C92A00B50C37 /* Physics.swift */; };
-		590415EF2B00F92D00B50C37 /* Pipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415EE2B00F92D00B50C37 /* Pipe.swift */; };
-		590415F12B0148F200B50C37 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415F02B0148F200B50C37 /* Background.swift */; };
-		590415F32B014A7E00B50C37 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415F22B014A7E00B50C37 /* Base.swift */; };
-		590415F52B014B1500B50C37 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415F42B014B1500B50C37 /* Bird.swift */; };
+		590415EF2B00F92D00B50C37 /* PipeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415EE2B00F92D00B50C37 /* PipeNode.swift */; };
+		590415F12B0148F200B50C37 /* BackgroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415F02B0148F200B50C37 /* BackgroundNode.swift */; };
+		590415F32B014A7E00B50C37 /* BaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415F22B014A7E00B50C37 /* BaseNode.swift */; };
+		590415F52B014B1500B50C37 /* BirdNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415F42B014B1500B50C37 /* BirdNode.swift */; };
 		590415F82B015EE700B50C37 /* NodeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415F72B015EE700B50C37 /* NodeName.swift */; };
-		59CFCF722B0276D6001450E3 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFCF712B0276D6001450E3 /* Score.swift */; };
+		59B14C672B03731B0086B043 /* GameStateInitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B14C662B03731B0086B043 /* GameStateInitial.swift */; };
+		59B14C692B0374420086B043 /* GameInitialScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B14C682B0374420086B043 /* GameInitialScene.swift */; };
+		59B14C6B2B037CB10086B043 /* GetReadyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B14C6A2B037CB10086B043 /* GetReadyNode.swift */; };
+		59B14C6E2B0381A20086B043 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B14C6D2B0381A20086B043 /* GameViewController.swift */; };
+		59CFCF722B0276D6001450E3 /* ScoreNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFCF712B0276D6001450E3 /* ScoreNode.swift */; };
 		59CFCF742B0285A1001450E3 /* flappyFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59CFCF702B027677001450E3 /* flappyFont.ttf */; };
 		59CFCF772B029453001450E3 /* GameStateRunning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFCF762B029453001450E3 /* GameStateRunning.swift */; };
 		59CFCF792B02945E001450E3 /* GameStateFinished.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFCF782B02945E001450E3 /* GameStateFinished.swift */; };
 		59CFCF7B2B029668001450E3 /* TopBoundaryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFCF7A2B029668001450E3 /* TopBoundaryNode.swift */; };
+		59CFCF7D2B036E64001450E3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFCF7C2B036E64001450E3 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,17 +52,22 @@
 		590415E52B00C57500B50C37 /* SKTextureAtlas+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTextureAtlas+Extension.swift"; sourceTree = "<group>"; };
 		590415E82B00C7D900B50C37 /* bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bird.atlas; sourceTree = "<group>"; };
 		590415EA2B00C92A00B50C37 /* Physics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physics.swift; sourceTree = "<group>"; };
-		590415EE2B00F92D00B50C37 /* Pipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipe.swift; sourceTree = "<group>"; };
-		590415F02B0148F200B50C37 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
-		590415F22B014A7E00B50C37 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
-		590415F42B014B1500B50C37 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
+		590415EE2B00F92D00B50C37 /* PipeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeNode.swift; sourceTree = "<group>"; };
+		590415F02B0148F200B50C37 /* BackgroundNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundNode.swift; sourceTree = "<group>"; };
+		590415F22B014A7E00B50C37 /* BaseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNode.swift; sourceTree = "<group>"; };
+		590415F42B014B1500B50C37 /* BirdNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdNode.swift; sourceTree = "<group>"; };
 		590415F72B015EE700B50C37 /* NodeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeName.swift; sourceTree = "<group>"; };
+		59B14C662B03731B0086B043 /* GameStateInitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateInitial.swift; sourceTree = "<group>"; };
+		59B14C682B0374420086B043 /* GameInitialScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInitialScene.swift; sourceTree = "<group>"; };
+		59B14C6A2B037CB10086B043 /* GetReadyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReadyNode.swift; sourceTree = "<group>"; };
+		59B14C6D2B0381A20086B043 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		59CFCF702B027677001450E3 /* flappyFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = flappyFont.ttf; sourceTree = "<group>"; };
-		59CFCF712B0276D6001450E3 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		59CFCF712B0276D6001450E3 /* ScoreNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreNode.swift; sourceTree = "<group>"; };
 		59CFCF732B028570001450E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		59CFCF762B029453001450E3 /* GameStateRunning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateRunning.swift; sourceTree = "<group>"; };
 		59CFCF782B02945E001450E3 /* GameStateFinished.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateFinished.swift; sourceTree = "<group>"; };
 		59CFCF7A2B029668001450E3 /* TopBoundaryNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBoundaryNode.swift; sourceTree = "<group>"; };
+		59CFCF7C2B036E64001450E3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,8 @@
 				590415D02B00B96400B50C37 /* Assets */,
 				590415E42B00C56400B50C37 /* Extensions */,
 				590415E12B00C24E00B50C37 /* Game */,
+				59CFCF7C2B036E64001450E3 /* Game.swift */,
+				59B14C6D2B0381A20086B043 /* GameViewController.swift */,
 			);
 			path = FlappyBird;
 			sourceTree = "<group>";
@@ -126,12 +138,12 @@
 		590415E12B00C24E00B50C37 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				59CFCF752B029447001450E3 /* GameStates */,
-				590415EA2B00C92A00B50C37 /* Physics.swift */,
 				590415E22B00C25D00B50C37 /* Layer.swift */,
-				590415F62B015E1000B50C37 /* Nodes */,
-				590415DF2B00BEA900B50C37 /* GameScene.swift */,
 				590415F72B015EE700B50C37 /* NodeName.swift */,
+				590415EA2B00C92A00B50C37 /* Physics.swift */,
+				59CFCF752B029447001450E3 /* GameStates */,
+				590415F62B015E1000B50C37 /* Nodes */,
+				59B14C6C2B037D810086B043 /* Scenes */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -147,14 +159,24 @@
 		590415F62B015E1000B50C37 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
-				590415EE2B00F92D00B50C37 /* Pipe.swift */,
-				590415F02B0148F200B50C37 /* Background.swift */,
-				590415F22B014A7E00B50C37 /* Base.swift */,
-				590415F42B014B1500B50C37 /* Bird.swift */,
-				59CFCF712B0276D6001450E3 /* Score.swift */,
+				590415EE2B00F92D00B50C37 /* PipeNode.swift */,
+				590415F02B0148F200B50C37 /* BackgroundNode.swift */,
+				590415F22B014A7E00B50C37 /* BaseNode.swift */,
+				590415F42B014B1500B50C37 /* BirdNode.swift */,
+				59CFCF712B0276D6001450E3 /* ScoreNode.swift */,
 				59CFCF7A2B029668001450E3 /* TopBoundaryNode.swift */,
+				59B14C6A2B037CB10086B043 /* GetReadyNode.swift */,
 			);
 			path = Nodes;
+			sourceTree = "<group>";
+		};
+		59B14C6C2B037D810086B043 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				590415DF2B00BEA900B50C37 /* GameScene.swift */,
+				59B14C682B0374420086B043 /* GameInitialScene.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		59CFCF752B029447001450E3 /* GameStates */ = {
@@ -162,6 +184,7 @@
 			children = (
 				59CFCF762B029453001450E3 /* GameStateRunning.swift */,
 				59CFCF782B02945E001450E3 /* GameStateFinished.swift */,
+				59B14C662B03731B0086B043 /* GameStateInitial.swift */,
 			);
 			path = GameStates;
 			sourceTree = "<group>";
@@ -243,17 +266,22 @@
 			files = (
 				59CFCF792B02945E001450E3 /* GameStateFinished.swift in Sources */,
 				590415F82B015EE700B50C37 /* NodeName.swift in Sources */,
+				59B14C692B0374420086B043 /* GameInitialScene.swift in Sources */,
 				590415C52B00B89F00B50C37 /* GameView.swift in Sources */,
 				590415C32B00B89F00B50C37 /* FlappyBirdApp.swift in Sources */,
+				59B14C672B03731B0086B043 /* GameStateInitial.swift in Sources */,
 				59CFCF772B029453001450E3 /* GameStateRunning.swift in Sources */,
-				590415F32B014A7E00B50C37 /* Base.swift in Sources */,
+				59B14C6E2B0381A20086B043 /* GameViewController.swift in Sources */,
+				590415F32B014A7E00B50C37 /* BaseNode.swift in Sources */,
 				590415E32B00C25D00B50C37 /* Layer.swift in Sources */,
+				59CFCF7D2B036E64001450E3 /* Game.swift in Sources */,
 				590415E02B00BEA900B50C37 /* GameScene.swift in Sources */,
 				590415DE2B00BCFC00B50C37 /* Assets.swift in Sources */,
-				590415F52B014B1500B50C37 /* Bird.swift in Sources */,
-				59CFCF722B0276D6001450E3 /* Score.swift in Sources */,
-				590415F12B0148F200B50C37 /* Background.swift in Sources */,
-				590415EF2B00F92D00B50C37 /* Pipe.swift in Sources */,
+				59B14C6B2B037CB10086B043 /* GetReadyNode.swift in Sources */,
+				590415F52B014B1500B50C37 /* BirdNode.swift in Sources */,
+				59CFCF722B0276D6001450E3 /* ScoreNode.swift in Sources */,
+				590415F12B0148F200B50C37 /* BackgroundNode.swift in Sources */,
+				590415EF2B00F92D00B50C37 /* PipeNode.swift in Sources */,
 				59CFCF7B2B029668001450E3 /* TopBoundaryNode.swift in Sources */,
 				590415EB2B00C92A00B50C37 /* Physics.swift in Sources */,
 				590415E62B00C57500B50C37 /* SKTextureAtlas+Extension.swift in Sources */,
