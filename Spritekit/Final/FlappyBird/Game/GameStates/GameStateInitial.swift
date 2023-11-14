@@ -9,11 +9,11 @@ import GameplayKit
 
 final class GameStateInitial: GKState {
     // MARK: Properties
-    private weak var game: Game?
+    private unowned var gameViewController: GameViewController
     
     // MARK: Init
-    init(game: Game) {
-        self.game = game
+    init(gameViewController: GameViewController) {
+        self.gameViewController = gameViewController
     }
     
     // MARK: Overrides
@@ -26,6 +26,6 @@ final class GameStateInitial: GKState {
         
         print("[GAME STATE] Initial")
         
-        game?.openInitialScene()
+        gameViewController.openInitialScene()
     }
 }

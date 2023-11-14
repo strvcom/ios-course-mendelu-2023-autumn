@@ -77,7 +77,7 @@ final class GameScene: SKScene {
         
         bird.position = CGPoint(
             x: size.width * 0.3,
-            y: sceneCenterY
+            y: sceneCenterY + base.size.height
         )
         
         physicsWorld.contactDelegate = self
@@ -109,11 +109,14 @@ final class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
-        guard gameState.currentState is GameStateRunning else {
-            return
+        switch gameState.currentState {
+        case gameState.currentState as GameStateRunning:
+            bird.flapWings()
+        case gameState.currentState as GameStateFinished:
+            gameState.enter(GameStateInitial.self)
+        default:
+            break
         }
-        
-        bird.flapWings()
     }
 }
 
