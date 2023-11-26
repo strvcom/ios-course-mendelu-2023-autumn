@@ -36,16 +36,13 @@ final class GameInitialScene: SKScene {
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
+        let getReadyNode = GetReadyNode()
+        
         addChild(BackgroundNode())
         addChild(BaseNode())
-        
-        let getReadyNode = GetReadyNode()
-        getReadyNode.position = CGPoint(
-            x: size.width * 0.5,
-            y: size.height * 0.5
-        )
-        
         addChild(getReadyNode)
+        
+        getReadyNode.position = center
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

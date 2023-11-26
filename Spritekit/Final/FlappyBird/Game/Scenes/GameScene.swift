@@ -13,24 +13,14 @@ import GameplayKit
 final class GameScene: SKScene {
     // MARK: Properties
     private let gameState: GKStateMachine
+    private var bird: BirdNode!
+    private var base: BaseNode!
+    private var score: ScoreNode!
+    private var pointSound: SKAction!
+    private var hitSound: SKAction!
     
-    private lazy var bird = BirdNode()
-    private lazy var base = BaseNode()
-    private lazy var score = ScoreNode()
-    private var pipes = [PipeNode]()
-    
-    private let pointSound = SKAction.playSoundFileNamed(
-        Assets.Sounds.point,
-        waitForCompletion: false
-    )
-    
-    private let hitSound = SKAction.playSoundFileNamed(
-        Assets.Sounds.hit,
-        waitForCompletion: false
-    )
-    
-    private var sceneCenterY: CGFloat {
-        size.height * 0.5
+    private var pipes: [PipeNode] {
+        children.compactMap { $0 as? PipeNode }
     }
     
     // MARK: Init
@@ -57,53 +47,68 @@ final class GameScene: SKScene {
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
+        // MARK: Create children
+        let topBoundaryNode = TopBoundaryNode(width: size.width)
+        
+        bird = BirdNode()
+        
+        base = BaseNode()
+        
+        score = ScoreNode()
+        
+        // MARK: Add children into the scene
         addChild(BackgroundNode())
         addChild(base)
         addChild(bird)
         addChild(score)
+        addChild(topBoundaryNode)
         
-        let topBoundaryNode = TopBoundaryNode(width: size.width)
+        // MARK: Position children on the scene
         topBoundaryNode.position = CGPoint(
             x: 0,
             y: size.height
         )
         
-        addChild(topBoundaryNode)
-        
-        score.position = CGPoint(
-            x: size.width * 0.5,
-            y: size.height - 75
-        )
-        
         bird.position = CGPoint(
             x: size.width * 0.3,
-            y: sceneCenterY + base.size.height
+            y: center.y + base.size.height
         )
         
+        positionScoreNode()
+        
+        // MARK: Physics setup
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(
             dx: 0,
             dy: -5
         )
         
+        // MARK: Sounds setup
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback)
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
             print("AVAudioSession setup error \(error)")
         }
+        
+        pointSound = SKAction.playSoundFileNamed(
+            Assets.Sounds.point,
+            waitForCompletion: false
+        )
+        
+        hitSound = SKAction.playSoundFileNamed(
+            Assets.Sounds.hit,
+            waitForCompletion: false
+        )
+        
+        // MARK: Spawn pipe when the game starts
+        spawnPipe()
     }
     
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
         
-        guard gameState.currentState is GameStateRunning else {
-            return
-        }
-        
         bird.updateRotation()
-        
-        updatePipes()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -135,9 +140,7 @@ extension GameScene: SKPhysicsContactDelegate {
         
         switch contactBody.node?.name {
         case NodeName.pipe, NodeName.base:
-            run(hitSound)
-            
-            gameState.enter(GameStateFinished.self)
+            endGame()
         case NodeName.pipeHole:
             increaseScore(node: contactBody.node)
         default:
@@ -146,50 +149,19 @@ extension GameScene: SKPhysicsContactDelegate {
     }
 }
 
+// MARK: Public API
+extension GameScene {
+    func onSafeAreaChange() {
+        positionScoreNode()
+    }
+}
+
 // MARK: Private API
 private extension GameScene {
-    func updatePipes() {
-        guard !pipes.isEmpty else {
-            return spawnPipe()
-        }
-        
-        movePipes()
-        
-        removePipesOnLeft()
-        
-        spawnPipeIfNeeded()
-    }
-    
-    func movePipes() {
-        pipes.forEach { $0.position.x -= 1.5 }
-    }
-    
-    func removePipesOnLeft() {
-        pipes.filter { $0.scenePosition == .onLeft }
-            .forEach { pipe in
-                pipes.removeAll(where: { $0 === pipe })
-                
-                pipe.removeFromParent()
-            }
-    }
-    
-    func spawnPipeIfNeeded() {
-        let distanceBetweenPipes: CGFloat = bird.size.width * 4
-        
-        guard 
-            let pipe = pipes.last,
-            pipe.position.x + distanceBetweenPipes < size.width + pipe.width * 0.5
-        else {
-            return
-        }
-        
-        spawnPipe()
-    }
-    
     func spawnPipe() {
         let holeHeight = bird.size.height * 4
         
-        let lastPipeYPosition = (pipes.last?.position.y ?? sceneCenterY)
+        let lastPipeYPosition = pipes.last?.position.y ?? center.y
         
         let randomOffset = CGFloat.random(in: -150 ... 150)
         
@@ -197,11 +169,18 @@ private extension GameScene {
         
         let bottomYOffsetTreshold = base.position.y + base.size.height + holeHeight * 0.5
         
-        var pipeYPosition = lastPipeYPosition + randomOffset
-        if pipeYPosition > topYOffsetTreshold
-            || pipeYPosition < bottomYOffsetTreshold {
-            pipeYPosition = lastPipeYPosition - randomOffset
-        }
+        let pipeYPosition: CGFloat = {
+            var pipeYPosition = lastPipeYPosition + randomOffset
+            // If newly calculated y position is above the screen or bellow
+            // the base, then instead of adding value to lastPipeYPosition
+            // we substract it to move the pipe to other direction.
+            if pipeYPosition > topYOffsetTreshold
+                || pipeYPosition < bottomYOffsetTreshold {
+                return lastPipeYPosition - randomOffset
+            } else {
+                return pipeYPosition
+            }
+        }()
         
         let pipe = PipeNode(holeHeight: holeHeight)
         pipe.position = CGPoint(
@@ -209,23 +188,59 @@ private extension GameScene {
             y: pipeYPosition
         )
         
-        pipes.append(pipe)
-        
         addChild(pipe)
+        
+        pipe.run(
+            .group([
+                .sequence([
+                    .move(
+                        to: CGPoint(
+                            x: -pipe.width * 0.5,
+                            y: pipeYPosition
+                        ),
+                        duration: 5
+                    ),
+                    .removeFromParent()
+                ]),
+                .sequence([
+                    .wait(forDuration: 2),
+                    .run { [weak self] in
+                        self?.spawnPipe()
+                    }
+                ])
+            ])
+        )
+    }
+    
+    func endGame() {
+        gameState.enter(GameStateFinished.self)
+        
+        pipes.forEach { $0.removeAllActions() }
+        
+        run(hitSound)
     }
     
     func increaseScore(node: SKNode?) {
-        guard 
+        guard
             let pipe = node?.parent as? PipeNode,
-            !pipe.scoreCounted
+            let state = gameState.currentState as? GameStateRunning
         else {
             return
         }
         
-        pipe.scoreCounted = true
+        state.score += 1
         
-        score.score += 1
+        score.updateText(score: state.score)
+        
+        pipe.removeHoleNode()
         
         run(pointSound)
+    }
+    
+    func positionScoreNode() {
+        score.position = CGPoint(
+            x: center.x,
+            y: size.height - safeAreaInsets.top - score.height * 0.5
+        )
     }
 }

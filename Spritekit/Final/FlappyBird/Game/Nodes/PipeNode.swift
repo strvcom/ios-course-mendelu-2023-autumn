@@ -12,26 +12,6 @@ final class PipeNode: SKNode {
     private let holeHeight: CGFloat
     
     let width: CGFloat
-    /// Value, which says if the bird already flew over the pipe.
-    var scoreCounted = false
-    
-    var scenePosition: ScenePosition {
-        guard let scene = parent as? SKScene else {
-            return .none
-        }
-        
-        let isOnRight = position.x - width * 0.5 >= scene.size.width
-        
-        let isOnLeft = position.x + width * 0.5 <= 0
-        
-        if isOnRight {
-            return .onRight
-        } else if isOnLeft {
-            return .onLeft
-        } else {
-            return .visible
-        }
-    }
     
     // MARK: Init
     init(holeHeight: CGFloat) {
@@ -59,13 +39,14 @@ final class PipeNode: SKNode {
     }
 }
 
-// MARK: Scene position
+// MARK: Public API
 extension PipeNode {
-    enum ScenePosition {
-        case onRight
-        case visible
-        case onLeft
-        case none
+    func removeHoleNode() {
+        guard let holeNode = children.first(where: { $0.name == NodeName.pipeHole }) else {
+            return
+        }
+        
+        holeNode.removeFromParent()
     }
 }
 

@@ -35,6 +35,13 @@ final class GameViewController: UIViewController {
         
         gameState.enter(GameStateInitial.self)
     }
+    
+    // MARK: Overrides
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+    
+        (skView.scene as? GameScene)?.onSafeAreaChange()
+    }
 }
 
 // MARK: Public API

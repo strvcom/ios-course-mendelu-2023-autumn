@@ -15,7 +15,6 @@
 		590415DE2B00BCFC00B50C37 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415DD2B00BCFC00B50C37 /* Assets.swift */; };
 		590415E02B00BEA900B50C37 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415DF2B00BEA900B50C37 /* GameScene.swift */; };
 		590415E32B00C25D00B50C37 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415E22B00C25D00B50C37 /* Layer.swift */; };
-		590415E62B00C57500B50C37 /* SKTextureAtlas+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415E52B00C57500B50C37 /* SKTextureAtlas+Extension.swift */; };
 		590415E92B00C7D900B50C37 /* bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 590415E82B00C7D900B50C37 /* bird.atlas */; };
 		590415EB2B00C92A00B50C37 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415EA2B00C92A00B50C37 /* Physics.swift */; };
 		590415EF2B00F92D00B50C37 /* PipeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590415EE2B00F92D00B50C37 /* PipeNode.swift */; };
@@ -34,6 +33,7 @@
 		59CFCF772B029453001450E3 /* GameStateRunning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFCF762B029453001450E3 /* GameStateRunning.swift */; };
 		59CFCF792B02945E001450E3 /* GameStateFinished.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFCF782B02945E001450E3 /* GameStateFinished.swift */; };
 		59CFCF7B2B029668001450E3 /* TopBoundaryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFCF7A2B029668001450E3 /* TopBoundaryNode.swift */; };
+		59FB34312B1342F700F57ECD /* SKScene+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FB34302B1342F700F57ECD /* SKScene+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +46,6 @@
 		590415DD2B00BCFC00B50C37 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		590415DF2B00BEA900B50C37 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		590415E22B00C25D00B50C37 /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
-		590415E52B00C57500B50C37 /* SKTextureAtlas+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTextureAtlas+Extension.swift"; sourceTree = "<group>"; };
 		590415E82B00C7D900B50C37 /* bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bird.atlas; sourceTree = "<group>"; };
 		590415EA2B00C92A00B50C37 /* Physics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physics.swift; sourceTree = "<group>"; };
 		590415EE2B00F92D00B50C37 /* PipeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeNode.swift; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		59CFCF762B029453001450E3 /* GameStateRunning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateRunning.swift; sourceTree = "<group>"; };
 		59CFCF782B02945E001450E3 /* GameStateFinished.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateFinished.swift; sourceTree = "<group>"; };
 		59CFCF7A2B029668001450E3 /* TopBoundaryNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBoundaryNode.swift; sourceTree = "<group>"; };
+		59FB34302B1342F700F57ECD /* SKScene+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +103,9 @@
 				59B14C6F2B0383FE0086B043 /* AppDelegate.swift */,
 				59B14C6D2B0381A20086B043 /* GameViewController.swift */,
 				590415D02B00B96400B50C37 /* Assets */,
-				590415E42B00C56400B50C37 /* Extensions */,
+				59FB342F2B1342EE00F57ECD /* Extensions */,
 				590415E12B00C24E00B50C37 /* Game */,
+				59FB342C2B132E3500F57ECD /* GameState */,
 			);
 			path = FlappyBird;
 			sourceTree = "<group>";
@@ -138,19 +139,10 @@
 				590415E22B00C25D00B50C37 /* Layer.swift */,
 				590415F72B015EE700B50C37 /* NodeName.swift */,
 				590415EA2B00C92A00B50C37 /* Physics.swift */,
-				59CFCF752B029447001450E3 /* GameStates */,
 				590415F62B015E1000B50C37 /* Nodes */,
 				59B14C6C2B037D810086B043 /* Scenes */,
 			);
 			path = Game;
-			sourceTree = "<group>";
-		};
-		590415E42B00C56400B50C37 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				590415E52B00C57500B50C37 /* SKTextureAtlas+Extension.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		590415F62B015E1000B50C37 /* Nodes */ = {
@@ -176,14 +168,22 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		59CFCF752B029447001450E3 /* GameStates */ = {
+		59FB342C2B132E3500F57ECD /* GameState */ = {
 			isa = PBXGroup;
 			children = (
 				59CFCF762B029453001450E3 /* GameStateRunning.swift */,
 				59CFCF782B02945E001450E3 /* GameStateFinished.swift */,
 				59B14C662B03731B0086B043 /* GameStateInitial.swift */,
 			);
-			path = GameStates;
+			path = GameState;
+			sourceTree = "<group>";
+		};
+		59FB342F2B1342EE00F57ECD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				59FB34302B1342F700F57ECD /* SKScene+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +269,7 @@
 				59B14C672B03731B0086B043 /* GameStateInitial.swift in Sources */,
 				59CFCF772B029453001450E3 /* GameStateRunning.swift in Sources */,
 				59B14C6E2B0381A20086B043 /* GameViewController.swift in Sources */,
+				59FB34312B1342F700F57ECD /* SKScene+Extension.swift in Sources */,
 				590415F32B014A7E00B50C37 /* BaseNode.swift in Sources */,
 				590415E32B00C25D00B50C37 /* Layer.swift in Sources */,
 				590415E02B00BEA900B50C37 /* GameScene.swift in Sources */,
@@ -280,7 +281,6 @@
 				590415EF2B00F92D00B50C37 /* PipeNode.swift in Sources */,
 				59CFCF7B2B029668001450E3 /* TopBoundaryNode.swift in Sources */,
 				590415EB2B00C92A00B50C37 /* Physics.swift in Sources */,
-				590415E62B00C57500B50C37 /* SKTextureAtlas+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

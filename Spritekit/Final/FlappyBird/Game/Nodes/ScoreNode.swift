@@ -9,18 +9,15 @@ import SpriteKit
 
 final class ScoreNode: SKLabelNode {
     // MARK: Properties
-    var score = 0 {
-        didSet {
-            updateText()
-        }
-    }
+    let height: CGFloat = 48
     
+    // MARK: Init
     override init() {
         super.init()
         
         zPosition = Layer.score
         
-        updateText()
+        updateText(score: 0)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,9 +25,9 @@ final class ScoreNode: SKLabelNode {
     }
 }
 
-// MARK: Private API
-private extension ScoreNode {
-    func updateText() {
+// MARK: Public API
+extension ScoreNode {
+    func updateText(score: Int) {
         attributedText = NSAttributedString(
             string: "\(score)",
             attributes: [
@@ -39,7 +36,7 @@ private extension ScoreNode {
                 NSAttributedString.Key.strokeWidth: -2.0,
                 NSAttributedString.Key.font: UIFont(
                     name: Assets.Fonts.flappy,
-                    size: 48
+                    size: height
                 ) as Any
             ]
         )

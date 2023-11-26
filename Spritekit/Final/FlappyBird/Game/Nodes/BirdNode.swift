@@ -9,14 +9,21 @@ import SpriteKit
 
 final class BirdNode: SKSpriteNode {
     // MARK: Properties
-    private let wingFlapSound = SKAction.playSoundFileNamed(
-        Assets.Sounds.wing,
-        waitForCompletion: false
-    )
+    private let wingFlapSound: SKAction
     
     // MARK: Init
     init() {
-        let textures = SKTextureAtlas(named: Assets.Textures.bird).textures
+        let textureAtlas = SKTextureAtlas(named: Assets.Textures.bird)
+        
+        let textures = textureAtlas
+            .textureNames
+            .sorted()
+            .map { textureAtlas.textureNamed($0) }
+        
+        wingFlapSound = SKAction.playSoundFileNamed(
+            Assets.Sounds.wing,
+            waitForCompletion: false
+        )
         
         super.init(
             texture: textures.first,

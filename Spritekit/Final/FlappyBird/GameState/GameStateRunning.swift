@@ -11,6 +11,8 @@ final class GameStateRunning: GKState {
     // MARK: Properties
     private unowned var gameViewController: GameViewController
     
+    var score = 0
+    
     // MARK: Init
     init(gameViewController: GameViewController) {
         self.gameViewController = gameViewController
