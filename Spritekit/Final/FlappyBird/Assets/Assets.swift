@@ -23,7 +23,6 @@ extension Assets {
 // MARK: Sounds
 extension Assets {
     enum Sounds {
-        static let die = "die.wav"
         static let hit = "hit.wav"
         static let point = "point.wav"
         static let wing = "wing.wav"

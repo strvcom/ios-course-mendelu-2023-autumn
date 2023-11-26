@@ -170,7 +170,7 @@ private extension GameScene {
         let bottomYOffsetTreshold = base.position.y + base.size.height + holeHeight * 0.5
         
         let pipeYPosition: CGFloat = {
-            var pipeYPosition = lastPipeYPosition + randomOffset
+            let pipeYPosition = lastPipeYPosition + randomOffset
             // If newly calculated y position is above the screen or bellow
             // the base, then instead of adding value to lastPipeYPosition
             // we substract it to move the pipe to other direction.
