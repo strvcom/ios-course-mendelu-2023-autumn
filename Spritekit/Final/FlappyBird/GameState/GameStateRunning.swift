@@ -11,7 +11,7 @@ final class GameStateRunning: GKState {
     // MARK: Properties
     private unowned var gameViewController: GameViewController
     
-    var score = 0
+    private(set) var score = 0
     
     // MARK: Init
     init(gameViewController: GameViewController) {
@@ -29,5 +29,18 @@ final class GameStateRunning: GKState {
         print("[GAME STATE] Running")
         
         gameViewController.openGameScene()
+    }
+    
+    override func willExit(to nextState: GKState) {
+        super.willExit(to: nextState)
+        
+        score = 0
+    }
+}
+
+// MARK: Public API
+extension GameStateRunning {
+    func updateScore() {
+        score += 1
     }
 }

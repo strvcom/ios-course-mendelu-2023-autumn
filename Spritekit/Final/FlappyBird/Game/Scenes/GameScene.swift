@@ -203,7 +203,7 @@ private extension GameScene {
                     .removeFromParent()
                 ]),
                 .sequence([
-                    .wait(forDuration: 2),
+                    .wait(forDuration: 2.5),
                     .run { [weak self] in
                         self?.spawnPipe()
                     }
@@ -228,7 +228,7 @@ private extension GameScene {
             return
         }
         
-        state.score += 1
+        state.updateScore()
         
         score.updateText(score: state.score)
         
