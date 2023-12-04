@@ -6,5 +6,29 @@
 //
 
 import UIKit
+import SpriteKit
 
-final class GameViewController: UIViewController {}
+final class GameViewController: UIViewController {
+    private var skView: SKView {
+        view as! SKView
+    }
+    
+    override func loadView() {
+        view = SKView()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        skView.showsPhysics = true
+        
+        skView.presentScene(
+            GameScene(
+                size: CGSize(
+                    width: 288,
+                    height: 512
+                )
+            )
+        )
+    }
+}
