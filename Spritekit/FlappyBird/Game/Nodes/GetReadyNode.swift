@@ -1,15 +1,16 @@
 //
-//  BackgroundNode.swift
+//  GetReadyNode.swift
 //  FlappyBird
 //
-//  Created by Róbert Oravec on 28.11.2023.
+//  Created by Róbert Oravec on 14.11.2023.
 //
 
 import SpriteKit
 
-final class BackgroundNode: SKSpriteNode {
+final class GetReadyNode: SKSpriteNode {
+    // MARK: Init
     init() {
-        let texture = SKTexture(imageNamed: Assets.Textures.background)
+        let texture = SKTexture(imageNamed: Assets.Textures.getReady)
         
         super.init(
             texture: texture,
@@ -17,7 +18,7 @@ final class BackgroundNode: SKSpriteNode {
             size: texture.size()
         )
         
-        zPosition = Layer.background
+        zPosition = Layer.getReady
     }
     
     required init?(coder aDecoder: NSCoder) {

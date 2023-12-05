@@ -1,13 +1,14 @@
 //
-//  TopNode.swift
+//  TopBoundaryNode.swift
 //  FlappyBird
 //
-//  Created by Róbert Oravec on 28.11.2023.
+//  Created by Róbert Oravec on 13.11.2023.
 //
 
 import SpriteKit
 
-final class TopNode: SKNode {
+final class TopBoundaryNode: SKNode {
+    // MARK: Init
     init(width: CGFloat) {
         super.init()
         
@@ -17,10 +18,11 @@ final class TopNode: SKNode {
                 height: 1
             )
         )
+        physicsBody?.isDynamic = false
+        physicsBody?.friction = 0
+        physicsBody?.restitution = 0
         physicsBody?.categoryBitMask = Physics.CategoryBitMask.sceneBorder
         physicsBody?.collisionBitMask = Physics.CollisionBitMask.sceneBorder
-        physicsBody?.affectedByGravity = false
-        physicsBody?.isDynamic = false
     }
     
     required init?(coder aDecoder: NSCoder) {
