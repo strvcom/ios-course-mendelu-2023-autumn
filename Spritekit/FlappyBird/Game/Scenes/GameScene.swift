@@ -132,17 +132,17 @@ extension GameScene: SKPhysicsContactDelegate {
             return
         }
         
-        let contactBody = if contact.bodyA.node?.name == NodeName.bird {
+        let noBirdContactBody = if contact.bodyA.node?.name == NodeName.bird {
             contact.bodyB
         } else {
             contact.bodyA
         }
         
-        switch contactBody.node?.name {
+        switch noBirdContactBody.node?.name {
         case NodeName.pipe, NodeName.base:
             endGame()
         case NodeName.pipeHole:
-            increaseScore(node: contactBody.node)
+            increaseScore(node: noBirdContactBody.node)
         default:
             break
         }

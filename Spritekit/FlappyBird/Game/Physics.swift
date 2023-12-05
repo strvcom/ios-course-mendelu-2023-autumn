@@ -48,6 +48,8 @@ extension Physics {
     /// in a nonzero value, an SKPhysicsContact object is created
     /// and passed to the physics world’s delegate.
     enum ContactTestBitMask {
+        static let base = Physics.CategoryBitMask.bird
+        static let pipe = Physics.CategoryBitMask.bird
         static let bird = Physics.CategoryBitMask.base | Physics.CategoryBitMask.pipe | Physics.CategoryBitMask.hole
         static let hole = Physics.CategoryBitMask.bird
     }

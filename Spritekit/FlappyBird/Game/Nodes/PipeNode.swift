@@ -59,6 +59,9 @@ private extension PipeNode {
             texture: texture,
             size: pipe.size
         )
+        pipe.physicsBody?.categoryBitMask = Physics.CategoryBitMask.pipe
+        pipe.physicsBody?.collisionBitMask = Physics.CollisionBitMask.pipe
+        pipe.physicsBody?.contactTestBitMask = Physics.ContactTestBitMask.pipe
         pipe.physicsBody?.isDynamic = false
         return pipe
     }
@@ -94,6 +97,7 @@ private extension PipeNode {
             )
         )
         holeNode.physicsBody?.categoryBitMask = Physics.CategoryBitMask.hole
+        // Setting collisionbitmask to 0 means no collision with this physics body will happen.
         holeNode.physicsBody?.collisionBitMask = 0
         holeNode.physicsBody?.contactTestBitMask = Physics.ContactTestBitMask.hole
         holeNode.physicsBody?.isDynamic = false

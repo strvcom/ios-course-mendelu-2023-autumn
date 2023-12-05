@@ -37,6 +37,7 @@ final class BaseNode: SKSpriteNode {
         )
         physicsBody?.categoryBitMask = Physics.CategoryBitMask.base
         physicsBody?.collisionBitMask = Physics.CollisionBitMask.base
+        physicsBody?.contactTestBitMask = Physics.ContactTestBitMask.base
         physicsBody?.affectedByGravity = false
         physicsBody?.isDynamic = false
     }
