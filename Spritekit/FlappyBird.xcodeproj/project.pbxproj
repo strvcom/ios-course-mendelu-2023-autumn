@@ -96,6 +96,7 @@
 		590415C12B00B89F00B50C37 /* FlappyBird */ = {
 			isa = PBXGroup;
 			children = (
+				595906CF2B1610A100A4CC2E /* Game */,
 				59CFCF732B028570001450E3 /* Info.plist */,
 				59B14C712B0385A30086B043 /* LaunchScreen.storyboard */,
 				59B14C6F2B0383FE0086B043 /* AppDelegate.swift */,
@@ -258,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				595906DA2B1616CA00A4CC2E /* BirdNode.swift in Sources */,
 				59B14C702B0383FE0086B043 /* AppDelegate.swift in Sources */,
 				59CFCF792B02945E001450E3 /* GameStateFinished.swift in Sources */,
 				590415F82B015EE700B50C37 /* NodeName.swift in Sources */,
